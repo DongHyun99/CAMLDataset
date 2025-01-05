@@ -214,85 +214,74 @@
     </div> -->
 
     <!-- Dataset Information. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Dataset Information</h2>
-
-        <!-- Key Application. -->
-        <h3 class="title is-4">Key Application</h3>
-        <div class="content has-text-justified">
-          <p>
-            <code>Smart Surveillance System</code>
-          </p>
-        </div>
-        <br/>
-        <!--/ Key Application. -->
-
-        <!-- Primary Data Type. -->
-        <h3 class="title is-4">Primary Data Type</h3>
-        <div class="content has-text-justified">
-          <p>
-            <code>Training images</code>, <code>Test images</code>, <code>Train annotations.json</code>, <code>Test annotations.json</code>
-          </p>
-        </div>
-        <!--/ Primary Data Type. -->
-
-        <!-- Data Function. -->
-        <h3 class="title is-4">Data Function</h3>
-        <div class="content has-text-justified">
-          <p>
-            Training, testing
-          </p>
-        </div>
-        <!--/ Data Function. -->
-
-        <!-- Dataset Characteristics. -->
-        <h3 class="title is-4">Dataset Characteristics</h3>
-        <div class="content has-text-justified">
-          <p>
-            - Total number of images: 41,904 <br/>
-            - Total number of classes: 6 <br/>
-            - Average image resolution: 720p <br/>
-          </p>
-        </div>
-        <!--/ Dataset Characteristics. -->
-
-        <!-- Labels. -->
-        <h3 class="title is-4">Labels</h3>
-        <p>
-          The annotations for training and testing are created based on COCO dataset architecture. Therefore, each json file consists of 5 keys: 
-        </p>
-        <pre><code>
-          { 
-            'info': {description: 'IHP dataset', ...}, 
-            'licenses': [{'id': 1, ...}], 
-            'categories': [{'id': 1, 'name': 'Walking', ...}], 
-            'images': [{'id': 58023, 'dataset_id': 25, 'category_ids': [4], ...}], 
-            'annotations': [{'id': 4072, 'image_id': 58023, 'category_id': 4, 'dataset_id': 25, 'segmentation': [[165.5, 2.9, ...]], ...}] 
-          }
-        </code></pre>
-        <!--/ Labels. -->
-
-        <!-- Directory Structure. -->
-        <h3 class="title is-4">Directory Structure</h3>
-        <pre><code>
-          . 
-          ├── train 
-          │   ├── PRO_LRV-PRO_LRV_20201110_190156_11_001-190156-SHOT-0007-THUMB.jpg 
-          │   ├── ... 
-          │   └── mphb26675.jpg 
-          ├── test 
-          │   ├── PRO_LRV-PRO_LRV_20201110_190156_11_001-190156-SHOT-0004-THUMB.jpg 
-          │   ├── ... 
-          │   └── mphb26661.jpg 
-          └── annotations 
-              ├── instances_mphbE_train2020.json 
-              └── instances_mphbE_test2020.json 
-        </code></pre>
-        <!--/ Directory Structure. -->
-
-      </div>
+    <h2 class="title is-3">Dataset Information</h2>
+    <!-- Key Application. -->
+    <h3 class="title is-4">Key Application</h3>
+    <div class="content has-text-justified">
+      <p>
+        <code>Smart Surveillance System</code>
+      </p>
     </div>
+    <br/>
+    <!--/ Key Application. -->
+    <!-- Primary Data Type. -->
+    <h3 class="title is-4">Primary Data Type</h3>
+    <div class="content has-text-justified">
+      <p>
+        <code>Training images</code>, <code>Test images</code>, <code>Train annotations.json</code>, <code>Test annotations.json</code>
+      </p>
+    </div>
+    <!--/ Primary Data Type. -->
+    <!-- Data Function. -->
+    <h3 class="title is-4">Data Function</h3>
+    <div class="content has-text-justified">
+      <p>
+        Training, testing
+      </p>
+    </div>
+    <!--/ Data Function. -->
+    <!-- Dataset Characteristics. -->
+    <h3 class="title is-4">Dataset Characteristics</h3>
+    <div class="content has-text-justified">
+      <p>
+        - Total number of images: 41,904 <br/>
+        - Total number of classes: 6 <br/>
+        - Average image resolution: 720p <br/>
+      </p>
+    </div>
+    <!--/ Dataset Characteristics. -->
+    <!-- Labels. -->
+    <h3 class="title is-4">Labels</h3>
+    <p>
+      The annotations for training and testing are created based on COCO dataset architecture. Therefore, each json file consists of 5 keys: 
+    </p>
+    <pre><code>
+      { 
+        'info': {description: 'IHP dataset', ...}, 
+        'licenses': [{'id': 1, ...}], 
+        'categories': [{'id': 1, 'name': 'Walking', ...}], 
+        'images': [{'id': 58023, 'dataset_id': 25, 'category_ids': [4], ...}], 
+        'annotations': [{'id': 4072, 'image_id': 58023, 'category_id': 4, 'dataset_id': 25, 'segmentation': [[165.5, 2.9, ...]], ...}] 
+      }
+    </code></pre>
+    <!--/ Labels. -->
+    <!-- Directory Structure. -->
+    <h3 class="title is-4">Directory Structure</h3>
+    <pre><code>
+      . 
+      ├── train 
+      │   ├── PRO_LRV-PRO_LRV_20201110_190156_11_001-190156-SHOT-0007-THUMB.jpg 
+      │   ├── ... 
+      │   └── mphb26675.jpg 
+      ├── test 
+      │   ├── PRO_LRV-PRO_LRV_20201110_190156_11_001-190156-SHOT-0004-THUMB.jpg 
+      │   ├── ... 
+      │   └── mphb26661.jpg 
+      └── annotations 
+          ├── instances_mphbE_train2020.json 
+          └── instances_mphbE_test2020.json 
+    </code></pre>
+      <!--/ Directory Structure. -->
     <!--/ Dataset Information. -->
 
   </div>
