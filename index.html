@@ -259,40 +259,36 @@
 
         <!-- Labels. -->
         <h3 class="title is-4">Labels</h3>
-        <div class="content has-text-justified">
-          <p>
-            The annotations for training and testing are created based on COCO dataset architecture. Therefore, each json file consists of 5 keys: 
-          </p>
-          <pre><code>
-            { 
-              'info': {description: 'IHP dataset', ...}, 
-              'licenses': [{'id': 1, ...}], 
-              'categories': [{'id': 1, 'name': 'Walking', ...}], 
-              'images': [{'id': 58023, 'dataset_id': 25, 'category_ids': [4], ...}], 
-              'annotations': [{'id': 4072, 'image_id': 58023, 'category_id': 4, 'dataset_id': 25, 'segmentation': [[165.5, 2.9, ...]], ...}] 
-            }
-          </code></pre>
-        </div>
+        <p>
+          The annotations for training and testing are created based on COCO dataset architecture. Therefore, each json file consists of 5 keys: 
+        </p>
+        <pre><code>
+          { 
+            'info': {description: 'IHP dataset', ...}, 
+            'licenses': [{'id': 1, ...}], 
+            'categories': [{'id': 1, 'name': 'Walking', ...}], 
+            'images': [{'id': 58023, 'dataset_id': 25, 'category_ids': [4], ...}], 
+            'annotations': [{'id': 4072, 'image_id': 58023, 'category_id': 4, 'dataset_id': 25, 'segmentation': [[165.5, 2.9, ...]], ...}] 
+          }
+        </code></pre>
         <!--/ Labels. -->
 
         <!-- Directory Structure. -->
         <h3 class="title is-4">Directory Structure</h3>
-        <div class="content has-text-justified">
-          <pre><code>
-            . 
-            ├── train 
-            │   ├── PRO_LRV-PRO_LRV_20201110_190156_11_001-190156-SHOT-0007-THUMB.jpg 
-            │   ├── ... 
-            │   └── mphb26675.jpg 
-            ├── test 
-            │   ├── PRO_LRV-PRO_LRV_20201110_190156_11_001-190156-SHOT-0004-THUMB.jpg 
-            │   ├── ... 
-            │   └── mphb26661.jpg 
-            └── annotations 
-                ├── instances_mphbE_train2020.json 
-                └── instances_mphbE_test2020.json 
-          </code></pre>
-        </div>
+        <pre><code>
+          . 
+          ├── train 
+          │   ├── PRO_LRV-PRO_LRV_20201110_190156_11_001-190156-SHOT-0007-THUMB.jpg 
+          │   ├── ... 
+          │   └── mphb26675.jpg 
+          ├── test 
+          │   ├── PRO_LRV-PRO_LRV_20201110_190156_11_001-190156-SHOT-0004-THUMB.jpg 
+          │   ├── ... 
+          │   └── mphb26661.jpg 
+          └── annotations 
+              ├── instances_mphbE_train2020.json 
+              └── instances_mphbE_test2020.json 
+        </code></pre>
         <!--/ Directory Structure. -->
 
       </div>
