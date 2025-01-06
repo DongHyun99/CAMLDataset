@@ -6,7 +6,7 @@
         content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
   <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Common-sense Sentence Dataset</title>
+  <title>GYM/DMC-CDIL Dataset</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script> -->
@@ -84,7 +84,7 @@
             <a class="navbar-item" href="https://donghyun99.github.io/CAMLDataset/Common-sense_Sentence_Dataset">
               Common-sense Sentence Dataset
             </a>
-            <a class="navbar-item" href="">
+            <a class="navbar-item" href="https://donghyun99.github.io/CAMLDataset/GYM-DMC-CDIL_Dataset">
               GYM/DMC-CDIL Dataset
             </a>
             <a class="navbar-item" href="">
@@ -109,7 +109,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Common-sense Sentence Dataset</h1>
+          <h1 class="title is-1 publication-title">GYM/DMC-CDIL Dataset</h1>
           <!-- <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://keunhong.com">Keunhong Park</a><sup>1</sup>,</span>
@@ -160,9 +160,9 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img src="./static/images/Common-sense_dataset_teaser.png" height="100%">
+      <img src="./static/images/GYM-DMC_dataset_teaser.png" height="100%">
       <h2 class="subtitle has-text-centered">
-        The sentence dataset we built is a collection of textual descriptions reflecting common-sense knowledge about various classes. The resulting dataset provides a rich source of semantic knowledge, enabling its integration into tasks like Open Set Recognition (OSR) to improve model reasoning and performance against novel or unseen classes.
+        Gym/DMC-CDIL Dataset is the sets of demonstrations collected for training policy models via Cross-Domain Imitation Learning (CDIL) on Gym or DeepMind Control Suite (DMC). The dataset was introduced in our paper "Domain Adaptive Imitation Learning with Visual Observation" (D3IL).
       </h2>
     </div>
   </div>
@@ -176,7 +176,14 @@
         <h2 class="title is-3">Overview</h2>
         <div class="content has-text-justified">
           <p>
-            The sentence dataset constructed provides common-sense knowledge for OSR tasks. Sentences were extracted for each class in CIFAR10 and TinyImageNet using varying minimum weight thresholds (0, 0.2, 0.5, 1.0, 1.2, 1.5). Higher thresholds result in fewer, higher-quality sentences, while lower thresholds yield a larger quantity of lower-quality sentences. This trade-off ensures the dataset is versatile, balancing quality and quantity to adapt to the needs of different datasets and recognition tasks. 
+            Gym/DMC-CDIL Dataset are collected from original Gym or DMC environments, or from their modified versions. It is intended to be used for CDIL research for the purposes permitted under our Data License.
+          </p>
+          <p>
+            Each set of demonstrations includes 10,000 image observations. 
+            Each observation consists of 4 RGB images, which is the 4 consecutive timesteps ($o_t, o_{t-1}, o_{t-2}, o_{t-3}$) of rendered images. The resolution of each RGB image ($o_t$) varies from 32x32, 48x48, or 64x64. 
+          </p>
+          <p>
+            In the D3IL paper, three sets of demonstrations are used for each CDIL task, and each CDIL task consists of a source domain and a target domain. For example, if the source domain is "Reacher2-v2" and the target domain is "Reacher3-v2", then we use "Reacher2-v2" expert data (Source-Expert; SE), "Reacher2-v2" non-expert data (Source-NonExpert; SN), and "Reacher3-v2" non-expert data (Target-NonExpert; TN).
           </p>
         </div>
       </div>
@@ -216,7 +223,7 @@
     <h3 class="title is-4">Key Application</h3>
     <div class="content has-text-justified">
       <p>
-        <code>Image Classification</code>, <code>Open Set Recognition</code>, <code>Domain Alignment</code>
+        <code>Imitation Learning</code>, <code>Cross-Domain Imitation Learning</code>, <code>Reinforcement Learning</code>
       </p>
     </div>
     <!--/ Key Application. -->
@@ -224,7 +231,7 @@
     <h3 class="title is-4">Primary Data Type</h3>
     <div class="content has-text-justified">
       <p>
-        <code>Sentences</code>, <code>Label Annotations</code>
+        <code>Image Observations</code>, <code>Indices</code>
       </p>
     </div>
     <!--/ Primary Data Type. -->
@@ -232,7 +239,7 @@
     <h3 class="title is-4">Data Function</h3>
     <div class="content has-text-justified">
       <p>
-        Training
+        Expert, Prior
       </p>
     </div>
     <!--/ Data Function. -->
@@ -240,49 +247,93 @@
     <h3 class="title is-4">Dataset Characteristics</h3>
     <div class="content has-text-justified">
       <p>
-        <li>CIFAR10
-          <ul>
-            <li>Total number of classes: 10</li>
-            <li>Total number of sentences: 2994</li>
-          </ul>
-        </li>
-      </p>
-      <p>
-        <li>TinyImageNet
-          <ul>
-            <li>Total number of classes: 200</li>
-            <li>Total number of sentences: 6061</li>
-          </ul>
-        </li>
+        <li>Total number of images: 220,000</li>
+        <li>Total number of images per set: 10,000</li>
+        <li>Total number of expert sets: 8</li>
+        <li>Total number of non-expert sets: 14</li>
+        <li>Image resolution: 32 x 32, 48 x 48, or 64 x 64 pixels (depending on the environments)</li>
       </p>
     </div>
     <!--/ Dataset Characteristics. -->
     <!-- Labels. -->
     <h3 class="title is-4">Labels</h3>
     <p>
-      At the end of each line, the class label number is appended.
-      <br>
-      e.g. You are likely to find a beverage service in an airplane 0
+      There are no labels in the dataset.
     </p>
+    
     <!--/ Labels. -->
     <!-- Directory Structure. -->
     <h3 class="title is-4">Directory Structure</h3>
     <pre><code>
       .
-      ├── CIFAR10
-      │   ├── Sentences_min_weight_0.txt
-      │   ├── Sentences_min_weight_0.2.txt
-      │   ├── Sentences_min_weight_0.5.txt
-      │   ├── Sentences_min_weight_1.txt
-      │   ├── Sentences_min_weight_1.2.txt
-      │   └── Sentences_min_weight_1.5.txt
-      └── TinyImageNet
-      │   ├── Sentences_min_weight_0.txt
-      │   ├── Sentences_min_weight_0.2.txt
-      │   ├── Sentences_min_weight_0.5.txt
-      │   ├── Sentences_min_weight_1.txt
-      │   ├── Sentences_min_weight_1.2.txt
-      │   └── Sentences_min_weight_1.5.txt
+      ├── expert_data
+      │   ├── InvertedPendulum-v2
+      │   │   ├── expert_ids.npy
+      │   │   └── expert_ims.npy
+      │   ├── InvertedDoublePendulum-v2
+      │   │   ├── expert_ids.npy
+      │   │   └── expert_ims.npy
+      │   ├── Reacher2-v2
+      │   │   ├── expert_ids.npy
+      │   │   └── expert_ims.npy
+      │   ├── Reacher3-v2
+      │   │   ├── expert_ids.npy
+      │   │   └── expert_ims.npy
+      │   ├── DMCartPoleBalance
+      │   │   ├── expert_ids.npy
+      │   │   └── expert_ims.npy
+      │   ├── DMCartPoleSwingUp
+      │   │   ├── expert_ids.npy
+      │   │   └── expert_ims.npy
+      │   ├── DMPendulum
+      │   │   ├── expert_ids.npy
+      │   │   └── expert_ims.npy
+      │   └── PointUMaze-v2
+      │       ├── expert_ids.npy
+      │       └── expert_ims.npy
+      └── prior_data
+          ├── ExpertInvertedPendulum-v2
+          │   ├── expert_ids.npy
+          │   └── expert_ims.npy
+          ├── AgentInvertedPendulum-v2
+          │   ├── expert_ids.npy
+          │   └── expert_ims.npy
+          ├── ExpertInvertedDoublePendulum-v2
+          │   ├── expert_ids.npy
+          │   └── expert_ims.npy
+          ├── AgentInvertedDoublePendulum-v2
+          │   ├── expert_ids.npy
+          │   └── expert_ims.npy
+          ├── Reacher2-v2
+          │   ├── expert_ids.npy
+          │   └── expert_ims.npy
+          ├── TiltedReacher2-v2
+          │   ├── expert_ids.npy
+          │   └── expert_ims.npy
+          ├── Reacher3-v2
+          │   ├── expert_ids.npy
+          │   └── expert_ims.npy
+          ├── TiltedReacher3-v2
+          │   ├── expert_ids.npy
+          │   └── expert_ims.npy
+          ├── DMCartPoleBalance
+          │   ├── expert_ids.npy
+          │   └── expert_ims.npy
+          ├── DMCartPoleSwingUp
+          │   ├── expert_ids.npy
+          │   └── expert_ims.npy
+          ├── DMPendulum
+          │   ├── expert_ids.npy
+          │   └── expert_ims.npy
+          ├── DMAcrobot
+          │   ├── expert_ids.npy
+          │   └── expert_ims.npy
+          ├── PointUMaze-v2
+          │   ├── expert_ids.npy
+          │   └── expert_ims.npy
+          └── AntUMaze-v2
+              ├── expert_ids.npy
+              └── expert_ims.npy
     </code></pre>
       <!--/ Directory Structure. -->
     <!--/ Dataset Information. -->
@@ -298,13 +349,19 @@
       If you use this datasets in your research, please use the following BibTeX entry.
     </p>
     <pre><code>
-      @article{Kim_Kim_Ro_2024, 
-        title={Improving Open Set Recognition via Visual Prompts Distilled from Common-Sense Knowledge}, volume={38}, 
-         url={https://ojs.aaai.org/index.php/AAAI/article/view/28058}, DOI={10.1609/aaai.v38i3.28058}, 
-         author={Kim, Seongyeop and Kim, Hyung-Il and Ro, Yong Man}, 
-         year={2024}, month={Mar.}, pages={2786-2794}
+      @inproceedings{
+      choi2023domain,
+      title={Domain Adaptive Imitation Learning with Visual Observation},
+      author={Sungho Choi and Seungyul Han and Woojun Kim and Jongseong Chae and Whiyoung Jung and Youngchul Sung},
+      booktitle={Thirty-seventh Conference on Neural Information Processing Systems},
+      year={2023},
+      url={https://proceedings.neurips.cc/paper_files/paper/2023/hash/899511e37a8e01e1bd6f6f1d377cc250-Abstract-Conference.html}
       }
     </code></pre>
+
+    <p>
+      Please email <a href="mailto:sungho.choi@kaist.ac.kr">sungho.choi@kaist.ac.kr</a> to report any issues.
+    </p>
   </div>
 </section>
 
