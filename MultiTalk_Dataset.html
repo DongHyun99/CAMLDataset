@@ -6,7 +6,7 @@
         content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
   <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>IHP Dataset</title>
+  <title>MultiTalk Dataset</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script> -->
@@ -93,7 +93,7 @@
             <a class="navbar-item" href="">
               BEAF Dataset
             </a>
-            <a class="navbar-item" href="">
+            <a class="navbar-item" href="https://donghyun99.github.io/CAMLDataset/MultiTalk_Dataset">
               MultiTalk Dataset
             </a>
           </div>
@@ -109,7 +109,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">IHP Dataset</h1>
+          <h1 class="title is-1 publication-title">MultiTalk Dataset</h1>
           <!-- <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://keunhong.com">Keunhong Park</a><sup>1</sup>,</span>
@@ -133,7 +133,7 @@
           </div> -->
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block">ETRI</span>
+            <span class="author-block">Postech</span>
             <!-- <span class="author-block"><sup>2</sup>Google Research</span> -->
           </div>
 
@@ -141,7 +141,7 @@
             <div class="publication-links">
               <!-- Dataset Link. -->
               <span class="link-block">
-                <a href="https://github.com/kmbae/HSENet_AVSS2021"
+                <a href="https://github.com/postech-ami/MultiTalk/blob/main/MultiTalk_dataset/README.md"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="far fa-images"></i>
@@ -160,9 +160,9 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img src="./static/images/IHP_dataset_teaser.png" height="100%">
+      <img src="./static/images/MultiTalk_dataset_teaser.png" height="100%">
       <h2 class="subtitle has-text-centered">
-        The Irregular Human Posture (IHP) dataset is a proposed training dataset designed to recognize various human postures captured in real-world surveillance cameras.
+        MultiTalk dataset is a dataset designed for training multilingual 3D talking heads, which generates 3D talking heads from speeches in diverse languages. The dataset was introduced in our paper "MultiTalk: Enhancing 3D Talking Head Generation Across Languages with Multilingual Video Dataset".
       </h2>
     </div>
   </div>
@@ -176,10 +176,7 @@
         <h2 class="title is-3">Overview</h2>
         <div class="content has-text-justified">
           <p>
-            To address real-world human postures, we constructed a dataset comprising six classes: ‘Walking’, ‘Crouching’, ‘Lying’, ‘Standing’, ‘Running’, and ‘Sitting’. Additionally, the dataset is annotated with segmentation maps and keypoints to provide a more detailed understanding of human postures. 
-          </p>
-          <p>
-            To ensure robustness across various scenarios, we also included images containing relatively small instances to account for varying object sizes.
+            Recent studies in speech-driven 3D talking head generation have achieved convincing results in verbal articulations. However, generating accurate lip-syncs degrades when applied to input speech in other languages, possibly due to the lack of datasets covering a broad spectrum of facial movements across languages. To enhance expressiveness and multilingual capability of speech-driven 3D talking head generation model, we collect a new multilingual 2D video dataset comprising over 420 hours of talking videos in 20 languages. It contains 293,812 clips with a resolution of 512x512, a frame rate of 25 fps, and an average duration of 5.19 seconds per clip. The dataset shows a balanced distribution across languages, with each language representing between 2.0% and 9.7% of the total. With our proposed dataset, the model performs robust lip synchronization performance across diverse languages, capturing the unique mouth movements associated with each language.
           </p>
         </div>
       </div>
@@ -219,7 +216,7 @@
     <h3 class="title is-4">Key Application</h3>
     <div class="content has-text-justified">
       <p>
-        <code>Smart Surveillance System</code>
+        <code>Speech-Driven 3D Talking Head Generation</code>
       </p>
     </div>
     <!--/ Key Application. -->
@@ -227,7 +224,7 @@
     <h3 class="title is-4">Primary Data Type</h3>
     <div class="content has-text-justified">
       <p>
-        <code>Training images</code>, <code>Test images</code>, <code>Train annotations.json</code>, <code>Test annotations.json</code>
+        <code>Video</code>, <code>Transcript</code>, <code>3D mesh vertices</code>
       </p>
     </div>
     <!--/ Primary Data Type. -->
@@ -243,42 +240,70 @@
     <h3 class="title is-4">Dataset Characteristics</h3>
     <div class="content has-text-justified">
       <p>
-        <li>Total number of images: 41,904</li>
-        <li>Total number of classes: 6</li>
-        <li>Average image resolution: 720p</li>
+        <li>Total number of clips: 293,812</li>
+        <li>Total number of languages: 20</li>
+        <li>Total duration: 423.2 hours</li>
+        <li>Image resolution: 512x512</li>
+        <li>Average duration per clip: 5.19 seconds</li>
       </p>
     </div>
     <!--/ Dataset Characteristics. -->
     <!-- Labels. -->
     <h3 class="title is-4">Labels</h3>
     <p>
-      The annotations for training and testing are created based on COCO dataset architecture. Therefore, each json file consists of 5 keys: 
+      Video name, youtube id, start and end times in the original video, bounding box, language, transcript are in ./annotations/{arabic,catalan,croatian,czech,dutch,english,french,german,greek,hindi,italian,japanese,mandarin,polish,portuguese,russian,spanish,thai,turkish,ukrainian}.json
     </p>
     <pre><code>
-      { 
-        'info': {description: 'IHP dataset', ...}, 
-        'licenses': [{'id': 1, ...}], 
-        'categories': [{'id': 1, 'name': 'Walking', ...}], 
-        'images': [{'id': 58023, 'dataset_id': 25, 'category_ids': [4], ...}], 
-        'annotations': [{'id': 4072, 'image_id': 58023, 'category_id': 4, 'dataset_id': 25, 'segmentation': [[165.5, 2.9, ...]], ...}] 
+      {
+        "QrDZjUeiUwc_0":  // video name
+        {
+            "youtube_id": "QrDZjUeiUwc",                                // youtube id
+            "duration": {"start_sec": 302.0, "end_sec": 305.56},        // start and end times in the original video
+            "bbox": {"top": 0.0, "bottom": 0.8167, "left": 0.4484, "right": 0.9453},  // bounding box
+            "language": "czech",                                        // language
+            "transcript": "já jsem v podstatě obnovil svůj list z minulého roku"      // transcript
+        },
+        "QrDZjUeiUwc_1":  
+        {
+            "youtube_id": "QrDZjUeiUwc",                                
+            "duration": {"start_sec": 0.12, "end_sec": 4.12},        
+            "bbox": {"top": 0.0097, "bottom": 0.55, "left": 0.3406, "right": 0.6398},  
+            "language": "czech",                                       
+            "transcript": "ahoj tady anička a vítejte u dalšího easycheck videa"      
+        }
+        "..."
+        "..."
+    
       }
     </code></pre>
+    <p>
+      <li>You can pass the languages you want to download as arguments to the script. If you want to download all 20 languages, run the following script.</li>
+      <pre><code>
+        sh dataset.sh arabic catalan croatian czech dutch english french german greek hindi italian japanese mandarin polish portuguese russian spanish thai turkish ukrainian
+      </code></pre>
+    </p>
     <!--/ Labels. -->
     <!-- Directory Structure. -->
     <h3 class="title is-4">Directory Structure</h3>
+    <p>
+      After downloading, the folder structure will be as below. Each language folder contains the .mp4 videos.
+    </p>
     <pre><code>
-      . 
-      ├── train 
-      │   ├── PRO_LRV-PRO_LRV_20201110_190156_11_001-190156-SHOT-0007-THUMB.jpg 
-      │   ├── ... 
-      │   └── mphb26675.jpg 
-      ├── test 
-      │   ├── PRO_LRV-PRO_LRV_20201110_190156_11_001-190156-SHOT-0004-THUMB.jpg 
-      │   ├── ... 
-      │   └── mphb26661.jpg 
-      └── annotations 
-          ├── instances_mphbE_train2020.json 
-          └── instances_mphbE_test2020.json 
+      ${ROOT}
+      ├── multitalk_dataset        # MultiTalk Dataset
+      │   ├── arabic
+      │   │   ├── O-VJXuHb390_0.mp4
+      │   │   ├── O-VJXuHb390_1.mp4
+      │   │   ├── ...
+      │   │   └── ...             
+      │   ├── catalan                                        
+      │   ├── ...          
+      │   └── ...                 
+      └── raw_video              # Original videos (you can remove this directory after downloading)
+          ├── arabic              
+          ├── catalan                          
+          ├── ...          
+          └── ...
     </code></pre>
       <!--/ Directory Structure. -->
     <!--/ Dataset Information. -->
@@ -291,21 +316,17 @@
   <div class="container is-max-desktop content">
     <h2 class="title">Citing Datasets</h2>
     <p>
-      If you use this datasets in your research, please use the following BibTeX entry.
+      If you use MultiTalk dataset in your research, please use the following BibTeX entry.
     </p>
     <pre><code>
-      @INPROCEEDINGS{9663782,
-        author={Bae, Kangmin and Yun, Kimin and Cho, Jungchan and Bae, Yuseok},
-        booktitle={Advanced Video and Signal Based Surveillance (AVSS)}, 
-        title={The Dataset and Baseline Models to Detect Human Postural States Robustly against Irregular Postures}, 
-        year={2021},
-        doi={10.1109/AVSS52988.2021.9663782}
+      @article{sung2024multitalk,
+        title={MultiTalk: Enhancing 3D Talking Head Generation Across Languages with Multilingual Video Dataset},
+        author={Sung-Bin, Kim and Chae-Yeon, Lee and Son, Gihun and Hyun-Bin, Oh and Ju, Janghoon and Nam, Suekyeong and Oh, Tae-Hyun},
+        journal={arXiv preprint arXiv:2406.14272},
+        year={2024}
       }
     </code></pre>
 
-    <p>
-      Please email <a href="mailto:kmbae@etri.re.kr">kmbae@etri.re.kr</a> to report any issues.
-    </p>
   </div>
 </section>
 
