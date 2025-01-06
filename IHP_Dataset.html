@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IHP Dataset</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script> -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://donghyun99.github.io/CAMLDataset/">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Dataset
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://donghyun99.github.io/CAMLDataset/IHP_Dataset">
+            IHP Dataset
+          </a>
+          <a class="navbar-item" href="">
+            Foggy KITTI Dataset
+          </a>
+          <a class="navbar-item" href="">
+            Fewshot Object Detection Benchmark
+          </a>
+          <a class="navbar-item" href="">
+            Large Vision Models Competency Benchmark
+          </a>
+          <a class="navbar-item" href="">
+            Jeju Autonomous Driving Dataset (v1)
+          </a>
+          <a class="navbar-item" href="">
+            Jeju Autonomous Driving Dataset (v2)
+          </a>
+          <a class="navbar-item" href="">
+            Common-sense Sentence Dataset
+          </a>
+          <a class="navbar-item" href="">
+            GYM/DMC-CDIL Dataset
+          </a>
+          <a class="navbar-item" href="">
+            Robot Navigation Dataset
+          </a>
+          <a class="navbar-item" href="">
+            BEAF Dataset
+          </a>
+          <a class="navbar-item" href="">
+            MultiTalk Dataset
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">IHP Dataset</h1>
+          <!-- <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://keunhong.com">Keunhong Park</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://utkarshsinha.com">Utkarsh Sinha</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://jonbarron.info">Jonathan T. Barron</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="http://sofienbouaziz.com">Sofien Bouaziz</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.danbgoldman.com">Dan B Goldman</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://homes.cs.washington.edu/~seitz/">Steven M. Seitz</a><sup>1,2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="http://www.ricardomartinbrualla.com">Ricardo Martin-Brualla</a><sup>2</sup>
+            </span>
+          </div> -->
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">ETRI</span>
+            <!-- <span class="author-block"><sup>2</sup>Google Research</span> -->
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://github.com/kmbae/HSENet_AVSS2021"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="./static/images/IHP_dataset_teaser.png" height="100%">
+      <h2 class="subtitle has-text-centered">
+        The Irregular Human Posture (IHP) dataset is a proposed training dataset designed to recognize various human postures captured in real-world surveillance cameras.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Overview. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            To address real-world human postures, we constructed a dataset comprising six classes: ‘Walking’, ‘Crouching’, ‘Lying’, ‘Standing’, ‘Running’, and ‘Sitting’. Additionally, the dataset is annotated with segmentation maps and keypoints to provide a more detailed understanding of human postures. 
+          </p>
+          <p>
+            To ensure robustness across various scenarios, we also included images containing relatively small instances to account for varying object sizes.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Overview. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop content">
+
+    <!-- <div class="columns is-centered">
+
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Key Application</h2>
+          <p>
+            <code>Smart Surveillance System</code>
+          </p>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Primary Data Type</h2>
+          <p>
+            <code>Training images</code>, <code>Test images</code>, <code>Train annotations.json</code>, <code>Test annotations.json</code>
+          </p>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- Dataset Information. -->
+    <h2 class="title is-3">Dataset Information</h2>
+    <!-- Key Application. -->
+    <h3 class="title is-4">Key Application</h3>
+    <div class="content has-text-justified">
+      <p>
+        <code>Smart Surveillance System</code>
+      </p>
+    </div>
+    <!--/ Key Application. -->
+    <!-- Primary Data Type. -->
+    <h3 class="title is-4">Primary Data Type</h3>
+    <div class="content has-text-justified">
+      <p>
+        <code>Training images</code>, <code>Test images</code>, <code>Train annotations.json</code>, <code>Test annotations.json</code>
+      </p>
+    </div>
+    <!--/ Primary Data Type. -->
+    <!-- Data Function. -->
+    <h3 class="title is-4">Data Function</h3>
+    <div class="content has-text-justified">
+      <p>
+        Training, testing
+      </p>
+    </div>
+    <!--/ Data Function. -->
+    <!-- Dataset Characteristics. -->
+    <h3 class="title is-4">Dataset Characteristics</h3>
+    <div class="content has-text-justified">
+      <p>
+        <li>Total number of images: 41,904</li>
+        <li>Total number of classes: 6</li>
+        <li>Average image resolution: 720p</li>
+      </p>
+    </div>
+    <!--/ Dataset Characteristics. -->
+    <!-- Labels. -->
+    <h3 class="title is-4">Labels</h3>
+    <p>
+      The annotations for training and testing are created based on COCO dataset architecture. Therefore, each json file consists of 5 keys: 
+    </p>
+    <pre><code>
+      { 
+        'info': {description: 'IHP dataset', ...}, 
+        'licenses': [{'id': 1, ...}], 
+        'categories': [{'id': 1, 'name': 'Walking', ...}], 
+        'images': [{'id': 58023, 'dataset_id': 25, 'category_ids': [4], ...}], 
+        'annotations': [{'id': 4072, 'image_id': 58023, 'category_id': 4, 'dataset_id': 25, 'segmentation': [[165.5, 2.9, ...]], ...}] 
+      }
+    </code></pre>
+    <!--/ Labels. -->
+    <!-- Directory Structure. -->
+    <h3 class="title is-4">Directory Structure</h3>
+    <pre><code>
+      . 
+      ├── train 
+      │   ├── PRO_LRV-PRO_LRV_20201110_190156_11_001-190156-SHOT-0007-THUMB.jpg 
+      │   ├── ... 
+      │   └── mphb26675.jpg 
+      ├── test 
+      │   ├── PRO_LRV-PRO_LRV_20201110_190156_11_001-190156-SHOT-0004-THUMB.jpg 
+      │   ├── ... 
+      │   └── mphb26661.jpg 
+      └── annotations 
+          ├── instances_mphbE_train2020.json 
+          └── instances_mphbE_test2020.json 
+    </code></pre>
+      <!--/ Directory Structure. -->
+    <!--/ Dataset Information. -->
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Citing Datasets</h2>
+    <p>
+      If you use this datasets in your research, please use the following BibTeX entry.
+    </p>
+    <pre><code>
+      @INPROCEEDINGS{9663782,
+        author={Bae, Kangmin and Yun, Kimin and Cho, Jungchan and Bae, Yuseok},
+        booktitle={Advanced Video and Signal Based Surveillance (AVSS)}, 
+        title={The Dataset and Baseline Models to Detect Human Postural States Robustly against Irregular Postures}, 
+        year={2021},
+        doi={10.1109/AVSS52988.2021.9663782}
+      }
+    </code></pre>
+
+    <p>
+      Please email <a href="kmbae@etri.re.kr">kmbae@etri.re.kr</a> to report any issues.
+    </p>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -9,7 +9,7 @@
   <title>Foggy KITTI Dataset</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script> -->
   <script>
     window.dataLayer = window.dataLayer || [];
 
@@ -63,10 +63,10 @@
           More Dataset
         </a>
         <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://donghyun99.github.io/CAMLDataset/">
+          <a class="navbar-item" href="https://donghyun99.github.io/CAMLDataset/IHP_Dataset">
             IHP Dataset
           </a>
-          <a class="navbar-item" href="">
+          <a class="navbar-item" href="https://donghyun99.github.io/CAMLDataset/Foggy_KITTI_Dataset">
             Foggy KITTI Dataset
           </a>
           <a class="navbar-item" href="">
@@ -109,7 +109,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">IHP Dataset</h1>
+          <h1 class="title is-1 publication-title">Foggy KITTI Dataset</h1>
           <!-- <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://keunhong.com">Keunhong Park</a><sup>1</sup>,</span>
@@ -141,7 +141,7 @@
             <div class="publication-links">
               <!-- Dataset Link. -->
               <span class="link-block">
-                <a href="https://github.com/kmbae/HSENet_AVSS2021"
+                <a href="https://github.com/VisualAIKHU/MonoWAD"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="far fa-images"></i>
@@ -160,9 +160,9 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img src="./static/images/IHP_dataset_teaser.png" height="100%">
+      <img src="./static/images/Foggy_dataset_teaser.gif" height="100%">
       <h2 class="subtitle has-text-centered">
-        The Irregular Human Posture (IHP) dataset is a proposed training dataset designed to recognize various human postures captured in real-world surveillance cameras.
+        Foggy images at various intensities.
       </h2>
     </div>
   </div>
@@ -176,10 +176,10 @@
         <h2 class="title is-3">Overview</h2>
         <div class="content has-text-justified">
           <p>
-            To address real-world human postures, we constructed a dataset comprising six classes: ‘Walking’, ‘Crouching’, ‘Lying’, ‘Standing’, ‘Running’, and ‘Sitting’. Additionally, the dataset is annotated with segmentation maps and keypoints to provide a more detailed understanding of human postures. 
+            This repository shares the Foggy KITTI dataset introduced and utilized in the ECCV 2024 paper, MonoWAD: Weather-Adaptive Diffusion Model for Robust Monocular 3D Object Detection, Youngmin Oh, Hyung-Il Kim, Seong Tae Kim†, Jung Uk Kim†.
           </p>
           <p>
-            To ensure robustness across various scenarios, we also included images containing relatively small instances to account for varying object sizes.
+            The Foggy KITTI dataset extends the <a href="//www.cvlibs.net/datasets/kitti/eval_object.php?obj_benchmark=3d">KITTI dataset</a> to include challenging weather conditions, aiming to support research in real-world applications such as autonomous driving. It contains synthetic fog images with different levels of intensity and is divided into training and testing sets, providing a useful resource for developing and evaluating models in practical scenarios.
           </p>
         </div>
       </div>
@@ -219,7 +219,7 @@
     <h3 class="title is-4">Key Application</h3>
     <div class="content has-text-justified">
       <p>
-        <code>Smart Surveillance System</code>
+        <code>Monocular 3D Object Detection</code>, <code>Adverse Weather Removal</code>, <code>Scene Understanding</code>, <code>etc</code>
       </p>
     </div>
     <!--/ Key Application. -->
@@ -227,7 +227,7 @@
     <h3 class="title is-4">Primary Data Type</h3>
     <div class="content has-text-justified">
       <p>
-        <code>Training images</code>, <code>Test images</code>, <code>Train annotations.json</code>, <code>Test annotations.json</code>
+        <code>RGB Images</code>, <code>Annotations</code>
       </p>
     </div>
     <!--/ Primary Data Type. -->
@@ -243,42 +243,55 @@
     <h3 class="title is-4">Dataset Characteristics</h3>
     <div class="content has-text-justified">
       <p>
-        - Total number of images: 41,904 <br/>
-        - Total number of classes: 6 <br/>
-        - Average image resolution: 720p <br/>
+        <li>Total number of images: 7,481 training images (3,712 training and 3,769 validation), 7,518 testing images</li>
+        <li>Adverse weather levels: 0.05, 0.1, 0.15, 0.3 (0.1 used as the main)</li>
+        <li>Average image resolution: 1242 x 375</li>
       </p>
     </div>
     <!--/ Dataset Characteristics. -->
     <!-- Labels. -->
     <h3 class="title is-4">Labels</h3>
     <p>
-      The annotations for training and testing are created based on COCO dataset architecture. Therefore, each json file consists of 5 keys: 
+      Each image is annotated with bounding boxes, object class labels
     </p>
-    <pre><code>
-      { 
-        'info': {description: 'IHP dataset', ...}, 
-        'licenses': [{'id': 1, ...}], 
-        'categories': [{'id': 1, 'name': 'Walking', ...}], 
-        'images': [{'id': 58023, 'dataset_id': 25, 'category_ids': [4], ...}], 
-        'annotations': [{'id': 4072, 'image_id': 58023, 'category_id': 4, 'dataset_id': 25, 'segmentation': [[165.5, 2.9, ...]], ...}] 
-      }
-    </code></pre>
     <!--/ Labels. -->
     <!-- Directory Structure. -->
     <h3 class="title is-4">Directory Structure</h3>
     <pre><code>
-      . 
-      ├── train 
-      │   ├── PRO_LRV-PRO_LRV_20201110_190156_11_001-190156-SHOT-0007-THUMB.jpg 
-      │   ├── ... 
-      │   └── mphb26675.jpg 
-      ├── test 
-      │   ├── PRO_LRV-PRO_LRV_20201110_190156_11_001-190156-SHOT-0004-THUMB.jpg 
-      │   ├── ... 
-      │   └── mphb26661.jpg 
-      └── annotations 
-          ├── instances_mphbE_train2020.json 
-          └── instances_mphbE_test2020.json 
+      .
+      ├── train
+      │   ├── foggy_2 # adverse weather images (with different fog intensities: 0.05, 0.10, 0.15, 0.30)
+      │   │   ├──foggy_0.05
+      │   │   │   ├── 000000.png
+      │   │   │   ├── 000001.png
+      │   │   │   ├── ...
+      │   │   │   └── 007480.png
+      │   │   ├──foggy_0.10
+      │   │   │   ├── 000000.png
+      │   │   │   ├── 000001.png
+      │   │   │   ├── ...
+      │   │   │   └── 007480.png
+      │   │   ├──foggy_0.15
+      │   │   │   ├── 000000.png
+      │   │   │   ├── 000001.png
+      │   │   │   ├── ...
+      │   │   │   └── 007480.png
+      │   │   └──foggy_0.30
+      │   │       ├── 000000.png
+      │   │       ├── 000001.png
+      │   │       ├── ...
+      │   │       └── 007480.png
+      │   └── label_2
+      │       ├── 000000.txt
+      │       ├── 000001.txt
+      │       ├── ...
+      │       └── 007480.txt
+      └── test
+          └── foggy_2 # adverse weather images (currently provides 0.10 intensity)
+              ├── 000000.png
+              ├── 000001.png
+              ├── ...
+              └── 007517.png 
     </code></pre>
       <!--/ Directory Structure. -->
     <!--/ Dataset Information. -->
@@ -291,20 +304,19 @@
   <div class="container is-max-desktop content">
     <h2 class="title">Citing Datasets</h2>
     <p>
-      If you use this datasets in your research, please use the following BibTeX entry.
+      If you use Foggy KITTI in your research, please use the following BibTeX entry.
     </p>
     <pre><code>
-      @INPROCEEDINGS{9663782,
-        author={Bae, Kangmin and Yun, Kimin and Cho, Jungchan and Bae, Yuseok},
-        booktitle={Advanced Video and Signal Based Surveillance (AVSS)}, 
-        title={The Dataset and Baseline Models to Detect Human Postural States Robustly against Irregular Postures}, 
-        year={2021},
-        doi={10.1109/AVSS52988.2021.9663782}
+      @article{oh2024monowad,
+        title={MonoWAD: Weather-Adaptive Diffusion Model for Robust Monocular 3D Object Detection},
+        author={Oh, Youngmin and Kim, Hyung-Il and Kim, Seong Tae and Kim, Jung Uk},
+        journal={arXiv preprint arXiv:2407.16448},
+        year={2024}
       }
     </code></pre>
 
     <p>
-      Please email <a href="kmbae@etri.re.kr">kmbae@etri.re.kr</a> to report any issues.
+      Please email <a href="hikim@etri.re.kr">hikim@etri.re.kr</a> to report any issues.
     </p>
   </div>
 </section>
