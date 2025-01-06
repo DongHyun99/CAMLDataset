@@ -6,7 +6,7 @@
         content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
   <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Foggy KITTI Dataset</title>
+  <title>BEAF Dataset</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script> -->
@@ -90,7 +90,7 @@
             <a class="navbar-item" href="">
               Robot Navigation Dataset
             </a>
-            <a class="navbar-item" href="">
+            <a class="navbar-item" href="https://donghyun99.github.io/CAMLDataset/BEAF_Dataset">
               BEAF Dataset
             </a>
             <a class="navbar-item" href="https://donghyun99.github.io/CAMLDataset/MultiTalk_Dataset">
@@ -109,7 +109,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Foggy KITTI Dataset</h1>
+          <h1 class="title is-1 publication-title">BEAF Dataset</h1>
           <!-- <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://keunhong.com">Keunhong Park</a><sup>1</sup>,</span>
@@ -133,7 +133,7 @@
           </div> -->
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block">ETRI</span>
+            <span class="author-block">Postech</span>
             <!-- <span class="author-block"><sup>2</sup>Google Research</span> -->
           </div>
 
@@ -141,7 +141,7 @@
             <div class="publication-links">
               <!-- Dataset Link. -->
               <span class="link-block">
-                <a href="https://github.com/VisualAIKHU/MonoWAD"
+                <a href="https://github.com/postech-ami/BEAF?tab=readme-ov-file"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="far fa-images"></i>
@@ -160,9 +160,9 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img src="./static/images/Foggy_dataset_teaser.gif" height="100%">
+      <img src="./static/images/BEAF_dataset_teaser.gif" height="100%">
       <h2 class="subtitle has-text-centered">
-        Foggy images at various intensities.
+        BEAF is a dataset designed for evaluating the hallucination of visiln language models (VLMs). The dataset was introduced in our paper "BEAF"
       </h2>
     </div>
   </div>
@@ -176,10 +176,10 @@
         <h2 class="title is-3">Overview</h2>
         <div class="content has-text-justified">
           <p>
-            This repository shares the Foggy KITTI dataset introduced and utilized in the ECCV 2024 paper, MonoWAD: Weather-Adaptive Diffusion Model for Robust Monocular 3D Object Detection, Youngmin Oh, Hyung-Il Kim, Seong Tae Kim†, Jung Uk Kim†.
+            The key idea of our BEAF benchmark is manipulating visual scene information and designing the metrics based on the model's answer changes along the scene changes.
           </p>
           <p>
-            The Foggy KITTI dataset extends the <a href="//www.cvlibs.net/datasets/kitti/eval_object.php?obj_benchmark=3d">KITTI dataset</a> to include challenging weather conditions, aiming to support research in real-world applications such as autonomous driving. It contains synthetic fog images with different levels of intensity and is divided into training and testing sets, providing a useful resource for developing and evaluating models in practical scenarios.
+            Large vision language models (LVLMs) perceive the world through a combination of a visual encoder and large language models (LLMs). The visual encoder, pre-trained on large-scale vision-text datasets, provides zero-shot generalization to visual data, and LLMs endow the high reasoning ability to LVLMs. It leads LVLMs to achieve high performance on wide benchmarks without fine-tuning, known as zero or few-shot capability of LLMs. However, recent studies show that LVLMs are vulnerable to hallucination. This undesirable behavior degrades reliability and credibility, thereby making users unable to fully trust the output from LVLMs. To enhance trustworthiness and better tackle the hallucination of LVLMs, we curate a new evaluation dataset, called the BEfore-AFter hallucination dataset (BEAF), and introduce new metrics: True Understanding (TU), IGnorance (IG), StuBbornness (SB), and InDecision (ID). Unlike prior works that focus only on constructing questions and answers, the key idea of our benchmark is that we manipulate visual scene information by image editing models and design the metrics based on scene changes. This allows us to clearly assess whether LVLMs correctly understand a given scene by observing the ability to perceive changes. We also visualize the correctness heatmap by virtue of our two-axis view: vision and text. Upon evaluating LVLMs with our dataset, we observed that our metrics can reveal different aspects of LVLM hallucination.
           </p>
         </div>
       </div>
@@ -219,7 +219,7 @@
     <h3 class="title is-4">Key Application</h3>
     <div class="content has-text-justified">
       <p>
-        <code>Monocular 3D Object Detection</code>, <code>Adverse Weather Removal</code>, <code>Scene Understanding</code>, <code>etc</code>
+        <code>Evaluation of hallucination in VLMs</code>
       </p>
     </div>
     <!--/ Key Application. -->
@@ -227,7 +227,7 @@
     <h3 class="title is-4">Primary Data Type</h3>
     <div class="content has-text-justified">
       <p>
-        <code>RGB Images</code>, <code>Annotations</code>
+        <code>Image</code>, <code>Question</code>, <code>Answer</code>, <code>Additional metadata</code>
       </p>
     </div>
     <!--/ Primary Data Type. -->
@@ -235,7 +235,7 @@
     <h3 class="title is-4">Data Function</h3>
     <div class="content has-text-justified">
       <p>
-        Training, testing
+        Evaluation
       </p>
     </div>
     <!--/ Data Function. -->
@@ -243,55 +243,59 @@
     <h3 class="title is-4">Dataset Characteristics</h3>
     <div class="content has-text-justified">
       <p>
-        <li>Total number of images: 7,481 training images (3,712 training and 3,769 validation), 7,518 testing images</li>
-        <li>Adverse weather levels: 0.05, 0.1, 0.15, 0.3 (0.1 used as the main)</li>
-        <li>Average image resolution: 1242 x 375</li>
+        <li>The number of images: 2,224</li>
+        <li>The number of image-question pairs: 26,064</li>
       </p>
     </div>
     <!--/ Dataset Characteristics. -->
     <!-- Labels. -->
     <h3 class="title is-4">Labels</h3>
     <p>
-      Each image is annotated with bounding boxes, object class labels
+      <li>Image name, question, GT answers, and additional metadata are in ./beaf_qna.json file</li>
     </p>
+    <pre><code>
+      [
+          {
+              "id": 0,
+              "image": "COCO_val2014_000000001171.jpg",
+              "question": "Is there a car in the image?",
+              "orig_img": true,
+              "removed_q": false,
+              "gt": "yes"
+          },
+          {
+              "id": 1,
+              "image": "COCO_val2014_000000001171.jpg",
+              "question": "Is there a train in the image?",
+              "orig_img": true,
+              "removed_q": true,
+              "gt": "yes"
+          },
+          ...
+      ]
+    </code></pre>
+    <br>
+    <p>
+      <li>The model output should be organized in a json file in the following format:</li>
+    </p>
+    <pre><code>
+      [
+        {"id": 0, "answer": "No."}, 
+        {"id": 1, "answer": "Yes."}, 
+        ... 
+        {"id": 26063, "answer": "No."}
+      ]
+    </code></pre>
     <!--/ Labels. -->
     <!-- Directory Structure. -->
     <h3 class="title is-4">Directory Structure</h3>
     <pre><code>
-      .
-      ├── train
-      │   ├── foggy_2 # adverse weather images (with different fog intensities: 0.05, 0.10, 0.15, 0.30)
-      │   │   ├──foggy_0.05
-      │   │   │   ├── 000000.png
-      │   │   │   ├── 000001.png
-      │   │   │   ├── ...
-      │   │   │   └── 007480.png
-      │   │   ├──foggy_0.10
-      │   │   │   ├── 000000.png
-      │   │   │   ├── 000001.png
-      │   │   │   ├── ...
-      │   │   │   └── 007480.png
-      │   │   ├──foggy_0.15
-      │   │   │   ├── 000000.png
-      │   │   │   ├── 000001.png
-      │   │   │   ├── ...
-      │   │   │   └── 007480.png
-      │   │   └──foggy_0.30
-      │   │       ├── 000000.png
-      │   │       ├── 000001.png
-      │   │       ├── ...
-      │   │       └── 007480.png
-      │   └── label_2
-      │       ├── 000000.txt
-      │       ├── 000001.txt
-      │       ├── ...
-      │       └── 007480.txt
-      └── test
-          └── foggy_2 # adverse weather images (currently provides 0.10 intensity)
-              ├── 000000.png
-              ├── 000001.png
-              ├── ...
-              └── 007517.png 
+      ./
+      ├── COCO_val2014_000000001171.jpg
+      ├── COCO_val2014_000000001171_00.png
+      ├── COCO_val2014_000000001171_01.png
+      ...
+      ├── COCO_val2014_000000580294.png
     </code></pre>
       <!--/ Directory Structure. -->
     <!--/ Dataset Information. -->
@@ -304,20 +308,31 @@
   <div class="container is-max-desktop content">
     <h2 class="title">Citing Datasets</h2>
     <p>
-      If you use Foggy KITTI in your research, please use the following BibTeX entry.
+      If you use this datasets in your research, please use the following BibTeX entry.
     </p>
     <pre><code>
-      @article{oh2024monowad,
-        title={MonoWAD: Weather-Adaptive Diffusion Model for Robust Monocular 3D Object Detection},
-        author={Oh, Youngmin and Kim, Hyung-Il and Kim, Seong Tae and Kim, Jung Uk},
-        journal={arXiv preprint arXiv:2407.16448},
-        year={2024}
+      @inproceedings{yebin2024beaf,
+        title     = {BEAF: Observing BEfore-AFter Changes to Evaluate Hallucination in Vision-language Models},
+        author    = {Ye-Bin, Moon and Hyeon-Woo, Nam and Choi, Wonseok and Oh, Tae-Hyun},
+        booktitle = {European Conference on Computer Vision (ECCV)},
+        year      = {2024},
+      }
+      
+      @inproceedings{lin2014microsoft,
+        title     = {Microsoft coco: Common objects in context},
+        author    = {Lin, Tsung-Yi and Maire, Michael and Belongie, Serge and Hays, James and Perona, Pietro and Ramanan, Deva and Doll{'a}r, Piotr and Zitnick, C Lawrence},
+        booktitle = {European Conference on Computer Vision (ECCV)},
+        year      = {2014},
+      }
+      
+      @inproceedings{Li-hallucination-2023,
+        title     = {Evaluating Object Hallucination in Large Vision-Language Models},
+        author    = {Yifan Li, Yifan Du, Kun Zhou, Jinpeng Wang, Wayne Xin Zhao and Ji-Rong Wen},
+        booktitle = {The 2023 Conference on Empirical Methods in Natural Language Processing},
+        year      = {2023},
       }
     </code></pre>
 
-    <p>
-      Please email <a href="mailto:hikim@etri.re.kr">hikim@etri.re.kr</a> to report any issues.
-    </p>
   </div>
 </section>
 
