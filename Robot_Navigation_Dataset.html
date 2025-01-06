@@ -6,7 +6,7 @@
         content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
   <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Foggy KITTI Dataset</title>
+  <title>Robot Navigation Dataset</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script> -->
@@ -117,7 +117,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Foggy KITTI Dataset</h1>
+          <h1 class="title is-1 publication-title">Robot Navigation Dataset</h1>
           <!-- <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://keunhong.com">Keunhong Park</a><sup>1</sup>,</span>
@@ -141,7 +141,7 @@
           </div> -->
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block">ETRI</span>
+            <span class="author-block">Seoul National University</span>
             <!-- <span class="author-block"><sup>2</sup>Google Research</span> -->
           </div>
 
@@ -149,7 +149,7 @@
             <div class="publication-links">
               <!-- Dataset Link. -->
               <span class="link-block">
-                <a href="https://github.com/VisualAIKHU/MonoWAD"
+                <a href="https://github.com/CORE-SNU/Robot-Navigation-Dataset"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="far fa-images"></i>
@@ -168,9 +168,9 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img src="./static/images/Foggy_dataset_teaser.gif" height="100%">
+      <!-- <img src="./static/images/IHP_dataset_teaser.png" height="100%"> -->
       <h2 class="subtitle has-text-centered">
-        Foggy images at various intensities.
+        A multi-modal dataset collected by a mobile robot in a crowded indoor environment. 
       </h2>
     </div>
   </div>
@@ -184,10 +184,11 @@
         <h2 class="title is-3">Overview</h2>
         <div class="content has-text-justified">
           <p>
-            This repository shares the Foggy KITTI dataset introduced and utilized in the ECCV 2024 paper, MonoWAD: Weather-Adaptive Diffusion Model for Robust Monocular 3D Object Detection, Youngmin Oh, Hyung-Il Kim, Seong Tae Kim†, Jung Uk Kim†.
-          </p>
-          <p>
-            The Foggy KITTI dataset extends the <a href="//www.cvlibs.net/datasets/kitti/eval_object.php?obj_benchmark=3d">KITTI dataset</a> to include challenging weather conditions, aiming to support research in real-world applications such as autonomous driving. It contains synthetic fog images with different levels of intensity and is divided into training and testing sets, providing a useful resource for developing and evaluating models in practical scenarios.
+            The dataset consists of the following:
+            <li> point clouds measured by 32-channel Ouster OS1 LiDAR (measured in 10Hz)</li>
+            <li> images received from Intel D435 RGBD camera (measured in 20Hz)</li>
+            <li> odometry data (meausred in 50Hz)</li>
+            The dataset will be consistently updated as we aim to collect diverse data under various domain shift scenarios.
           </p>
         </div>
       </div>
@@ -227,79 +228,52 @@
     <h3 class="title is-4">Key Application</h3>
     <div class="content has-text-justified">
       <p>
-        <code>Monocular 3D Object Detection</code>, <code>Adverse Weather Removal</code>, <code>Scene Understanding</code>, <code>etc</code>
+        <code>Mobile Robot Navigation</code>, <code>Dynamic Obstacle Avoidance</code>, <code>etc</code>
       </p>
     </div>
     <!--/ Key Application. -->
-    <!-- Primary Data Type. -->
-    <h3 class="title is-4">Primary Data Type</h3>
-    <div class="content has-text-justified">
-      <p>
-        <code>RGB Images</code>, <code>Annotations</code>
-      </p>
-    </div>
-    <!--/ Primary Data Type. -->
-    <!-- Data Function. -->
-    <h3 class="title is-4">Data Function</h3>
-    <div class="content has-text-justified">
-      <p>
-        Training, testing
-      </p>
-    </div>
-    <!--/ Data Function. -->
     <!-- Dataset Characteristics. -->
     <h3 class="title is-4">Dataset Characteristics</h3>
     <div class="content has-text-justified">
       <p>
-        <li>Total number of images: 7,481 training images (3,712 training and 3,769 validation), 7,518 testing images</li>
-        <li>Adverse weather levels: 0.05, 0.1, 0.15, 0.3 (0.1 used as the main)</li>
-        <li>Average image resolution: 1242 x 375</li>
+        Each trajectory is 30 seconds long. Currently, there are 60 trajectories in our dataset.
+        <li>Total number of images: 36,000</li>
+        <li>Total number of pcd files: 18,000</li>
       </p>
     </div>
     <!--/ Dataset Characteristics. -->
     <!-- Labels. -->
     <h3 class="title is-4">Labels</h3>
     <p>
-      Each image is annotated with bounding boxes, object class labels
+      The included data are raw sensory inputs, thus having no labels. <br>
+      However, we are planning to add labels to existing data so that they can be used to train state-of-the-art perception models.
     </p>
     <!--/ Labels. -->
     <!-- Directory Structure. -->
     <h3 class="title is-4">Directory Structure</h3>
     <pre><code>
       .
-      ├── train
-      │   ├── foggy_2 # adverse weather images (with different fog intensities: 0.05, 0.10, 0.15, 0.30)
-      │   │   ├──foggy_0.05
-      │   │   │   ├── 000000.png
-      │   │   │   ├── 000001.png
-      │   │   │   ├── ...
-      │   │   │   └── 007480.png
-      │   │   ├──foggy_0.10
-      │   │   │   ├── 000000.png
-      │   │   │   ├── 000001.png
-      │   │   │   ├── ...
-      │   │   │   └── 007480.png
-      │   │   ├──foggy_0.15
-      │   │   │   ├── 000000.png
-      │   │   │   ├── 000001.png
-      │   │   │   ├── ...
-      │   │   │   └── 007480.png
-      │   │   └──foggy_0.30
-      │   │       ├── 000000.png
-      │   │       ├── 000001.png
-      │   │       ├── ...
-      │   │       └── 007480.png
-      │   └── label_2
-      │       ├── 000000.txt
-      │       ├── 000001.txt
-      │       ├── ...
-      │       └── 007480.txt
-      └── test
-          └── foggy_2 # adverse weather images (currently provides 0.10 intensity)
-              ├── 000000.png
-              ├── 000001.png
-              ├── ...
-              └── 007517.png 
+      ├── odometry
+      │   ├── trajectory1.csv
+      │   ├── trajectory2.csv
+      │   ├── ...
+      │   └── trajectory60.csv
+      └── pcds
+      │    ├── trajectory1
+      │    │   ├── 001.pcd
+      │    │   ├── 002.pcd
+      │    │   ├── ...
+      │    │   └── 300.pcd
+      │    ├── ...
+      │    └── trajectory60
+      └── images
+             ├── trajectory1
+             │   ├── 001.png
+             │   ├── 002.png
+             │   ├── ...
+             │   └── 600.png
+             ├── ...
+             └── trajectory60
     </code></pre>
       <!--/ Directory Structure. -->
     <!--/ Dataset Information. -->
@@ -312,19 +286,19 @@
   <div class="container is-max-desktop content">
     <h2 class="title">Citing Datasets</h2>
     <p>
-      If you use Foggy KITTI in your research, please use the following BibTeX entry.
+      If you use this datasets in your research, please use the following BibTeX entry.
     </p>
     <pre><code>
-      @article{oh2024monowad,
-        title={MonoWAD: Weather-Adaptive Diffusion Model for Robust Monocular 3D Object Detection},
-        author={Oh, Youngmin and Kim, Hyung-Il and Kim, Seong Tae and Kim, Jung Uk},
-        journal={arXiv preprint arXiv:2407.16448},
-        year={2024}
+      @misc{jaeukshin2024robot,
+        author =       {Jaeuk Shin},
+        title =        {Robot Navigation},
+        howpublished = {\url{[http://github.com/hubtime-kmbae/CAML](https://github.com/CORE-SNU/Robot-Navigation-Dataset)}},
+        year =         {2024}
       }
     </code></pre>
 
     <p>
-      Please email <a href="mailto:hikim@etri.re.kr">hikim@etri.re.kr</a> to report any issues.
+      Please email <a href="mailto:sju5379@snu.ac.kr">sju5379@snu.ac.kr</a> to report any issues.
     </p>
   </div>
 </section>

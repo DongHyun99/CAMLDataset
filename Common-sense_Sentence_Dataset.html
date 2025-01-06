@@ -39,6 +39,14 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+  </script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
 </head>
 <body>
 
@@ -84,10 +92,10 @@
             <a class="navbar-item" href="https://donghyun99.github.io/CAMLDataset/Common-sense_Sentence_Dataset">
               Common-sense Sentence Dataset
             </a>
-            <a class="navbar-item" href="">
+            <a class="navbar-item" href="https://donghyun99.github.io/CAMLDataset/GYM-DMC-CDIL_Dataset">
               GYM/DMC-CDIL Dataset
             </a>
-            <a class="navbar-item" href="">
+            <a class="navbar-item" href="https://donghyun99.github.io/CAMLDataset/Robot_Navigation_Dataset">
               Robot Navigation Dataset
             </a>
             <a class="navbar-item" href="https://donghyun99.github.io/CAMLDataset/BEAF_Dataset">
@@ -159,7 +167,7 @@
 
 <section class="hero teaser">
   <div class="container is-max-desktop">
-    <div class="hero-body">
+    <div class="hero-body" style="text-align: center;">
       <img src="./static/images/Common-sense_dataset_teaser.png" height="100%">
       <h2 class="subtitle has-text-centered">
         The sentence dataset we built is a collection of textual descriptions reflecting common-sense knowledge about various classes. The resulting dataset provides a rich source of semantic knowledge, enabling its integration into tasks like Open Set Recognition (OSR) to improve model reasoning and performance against novel or unseen classes.
