@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="CAML Dataset | ETRI">
+  <meta name="keywords" content="CAML">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fewshot Object Detection Benchmark</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script> -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+  </script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
+</head>
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+        <a class="navbar-item" href="https://camldataset.netlify.app/">
+        <span class="icon">
+            <i class="fas fa-home"></i>
+        </span>
+        </a>
+  
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            More Dataset
+          </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://camldataset.netlify.app/ihp_dataset">
+              IHP Dataset
+            </a>
+            <a class="navbar-item" href="https://camldataset.netlify.app/foggy_kitti_dataset">
+              Foggy KITTI Dataset
+            </a>
+            <a class="navbar-item" href="https://camldataset.netlify.app/fewshot_object_detection_benchmark">
+              Fewshot Object Detection Benchmark
+            </a>
+            <a class="navbar-item" href="">
+              Large Vision Models Competency Benchmark
+            </a>
+            <a class="navbar-item" href="">
+              Jeju Autonomous Driving Dataset (v1)
+            </a>
+            <a class="navbar-item" href="">
+              Jeju Autonomous Driving Dataset (v2)
+            </a>
+            <a class="navbar-item" href="https://camldataset.netlify.app/common-sense_sentence_dataset">
+              Common-sense Sentence Dataset
+            </a>
+            <a class="navbar-item" href="https://camldataset.netlify.app/gym-dmc-cdil_dataset">
+              GYM/DMC-CDIL Dataset
+            </a>
+            <a class="navbar-item" href="https://camldataset.netlify.app/robot_navigation_dataset">
+              Robot Navigation Dataset
+            </a>
+            <a class="navbar-item" href="https://camldataset.netlify.app/beaf_dataset">
+              BEAF Dataset
+            </a>
+            <a class="navbar-item" href="https://camldataset.netlify.app/multitalk_dataset">
+              MultiTalk Dataset
+            </a>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Fewshot Object Detection Benchmark</h1>
+          <!-- <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://keunhong.com">Keunhong Park</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://utkarshsinha.com">Utkarsh Sinha</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://jonbarron.info">Jonathan T. Barron</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="http://sofienbouaziz.com">Sofien Bouaziz</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.danbgoldman.com">Dan B Goldman</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://homes.cs.washington.edu/~seitz/">Steven M. Seitz</a><sup>1,2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="http://www.ricardomartinbrualla.com">Ricardo Martin-Brualla</a><sup>2</sup>
+            </span>
+          </div> -->
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">ETRI</span>
+            <!-- <span class="author-block"><sup>2</sup>Google Research</span> -->
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=data&dataSetSn=71577"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data1</span>
+                  </a>
+            </div>
+
+            <div class="publication-links">
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://www.bdd100k.com/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data2</span>
+                  </a>
+            </div>
+
+            <div class="publication-links">
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://github.com/vnmusat/multi-weather-city"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data3</span>
+                  </a>
+            </div>
+
+            <div class="publication-links">
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://www.cityscapes-dataset.com/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data4</span>
+                  </a>
+            </div>
+
+            <div class="publication-links"></div>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://rgbd.cs.princeton.edu/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data5</span>
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="https://rgbd.cs.princeton.edu/teaser.jpg" height="100%">
+      <h2 class="subtitle has-text-centered">
+        5 Dataset for few-shot object detection benchmark
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Overview. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            This dataset consists of images captured from various angles, including a front-center camera and a front-right camera, during daytime urban road driving. It allows effective consideration of domain shifts commonly encountered in image data collection, such as changes in camera perspectives. The dataset comprises a total of 16 classes (as listed below) and includes bounding box annotations in the OpenImages format. Additionally, it provides annotations specifically designed for few-shot training, including 1-shot, 3-shot, 5-shot, and 10-shot scenarios. (10-shot: only for traffic_day)
+          </p>
+          <p>
+            BDD100K comprises 100,000 high-resolution videos, each approximately 40 seconds long, totaling over 1,000 hours of driving footage. The dataset captures diverse driving environments across various U.S. locations, weather conditions (such as sunny, overcast, and rainy), and times of day (including daytime and nighttime). Annotations are provided for multiple tasks, including image tagging, lane detection, drivable area segmentation, object detection, semantic segmentation, and instance segmentation, facilitating comprehensive research in autonomous driving. 
+            <br>
+            To utilize the dataset for specific purposes, the BDD100K format was first converted to COCO format using a script and then to OpenImages format. Domain data was separated by time of day (daytime and nighttime) into respective folders, with annotations saved as `daytime.json` and `night.json`. Few-shot annotations were generated using a script from prior research, splitting 90% of the data for training and 10% for evaluation, enabling customized experimentation.
+          </p>
+          <p>
+            The Cityscape Multi-Weather dataset consists of 2,705 urban street scene images collected from 18 German cities under four weather conditions (`overcast`, `snowy`, `wet`, and `night-time`) with a `car` object label. Among them, 448 images from 4 cities (`zurich`, `weimar`, `ulm`, `tubingen`) are designated as test data, and 2,257 images from the remaining 14 cities are used for training.
+          </p>
+          <p>
+            Cityscapes is a large-scale database which focuses on semantic understanding of urban street scenes. It provides semantic, instance-wise, and dense pixel annotations for 30 classes grouped into 8 categories (flat surfaces, humans, vehicles, constructions, objects, nature, sky, and void). The dataset consists of around 5000 fine annotated images and 20000 coarse annotated ones. Data was captured in 50 cities during several months, daytimes, and good weather conditions. It was originally recorded as video so the frames were manually selected to have the following features: large number of dynamic objects, varying scene layout, and varying background.
+          </p>
+          <p>
+            The SUN RGB-D dataset, originally designed for RGB-D scene understanding, has been adapted into a benchmark specifically for few-shot 2D object detection, focusing on the top 5 object classes (bed, table, sofa, chair, desk). The modified dataset consists of 7,347 images, divided into 3,685 for training and 3,662 for evaluation, with annotations formatted according to the OpenImage Annotation standard to ensure consistency and usability. This adaptation enables specialized research in few-shot 2D object detection, allowing the evaluation of models’ performance in low-data scenarios while retaining SUN RGB-D’s high-quality annotations.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Overview. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop content">
+
+    <!-- <div class="columns is-centered">
+
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Key Application</h2>
+          <p>
+            <code>Smart Surveillance System</code>
+          </p>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Primary Data Type</h2>
+          <p>
+            <code>Training images</code>, <code>Test images</code>, <code>Train annotations.json</code>, <code>Test annotations.json</code>
+          </p>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- Dataset Information. -->
+    <h2 class="title is-3">Dataset Information</h2>
+    <!-- Key Application. -->
+    <h3 class="title is-4">Key Application</h3>
+    <div class="content has-text-justified">
+      <p>
+        <code>Object Detection</code>, <code>Few-Shot Object Detection</code>, <code>Domain Adaptation</code>, <code>Multi-Domain Learning</code>
+      </p>
+    </div>
+    <!--/ Key Application. -->
+    <!-- Primary Data Type. -->
+    <h3 class="title is-4">Primary Data Type</h3>
+    <div class="content has-text-justified">
+      <p>
+        <code>RGB images</code>, <code>2D annotations (bounding boxes)</code>, <code>Polygonal annotations</code>
+      </p>
+    </div>
+    <!--/ Primary Data Type. -->
+    <!-- Data Function. -->
+    <h3 class="title is-4">Data Function</h3>
+    <div class="content has-text-justified">
+      <p>
+        Training, testing
+      </p>
+    </div>
+    <!--/ Data Function. -->
+    <!-- Dataset Characteristics. -->
+    <h3 class="title is-4">Dataset Characteristics</h3>
+    <div class="content has-text-justified">
+      <p>
+        <li>Total number of images: 23,900
+          <ul>
+            <li>Front-center (traffic_day, 22,500 images)</li>
+            <li>Front-right (traffic_day_target, 1,400 images)</li>
+          </ul>
+        </li>
+        <li>Total number of classes: 16</li>
+        <li>Average image resolution: 1920 x 1080</li>
+      </p>
+      <p>
+        <li>Total Number of Classes: 10</li>
+        <li>Average Image Resolution: 1280 x 720</li>
+        <li>Source Domain Data: 33,055 training images, 3,673 evaluation images</li>
+        <li>Target Domain Data: 25,165 training images, 2,796 evaluation images</li>
+      </p>
+      <p>
+        <li>Total number of images per domain: 2,705 (2,257 for training and 448 for evaluation)</li>
+        <li>Total number of domains (weather conditions): 4</li>
+        <li>Total number of classes: 1</li>
+        <li>Image resolution: 512 x 512</li>
+      </p>
+      <p>
+        <li>Total number of images: 6,950</li>
+        <li>Total number of classes: 8</li>
+        <li>Average image resolution: 2048 x 1024</li>
+      </p>
+      <p>
+        <li>Total number of images: 7,347</li>
+        <li>Total number of classes: 5</li>
+        <li>Average image resolution: 1920 x 1080</li>
+      </p>
+    </div>
+    <!--/ Dataset Characteristics. -->
+    <!--/ Dataset Information. -->
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Citing Datasets</h2>
+    <p>
+      If you use this datasets in your research, please use the following BibTeX entry.
+    </p>
+    <pre><code>
+      @InProceedings{Musat_2021_ICCV,
+          author    = {Mușat, Valentina and Fursa, Ivan and Newman, Paul and Cuzzolin, Fabio and Bradley, Andrew},
+          title     = {Multi-Weather City: Adverse Weather Stacking for Autonomous Driving},
+          booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV) Workshops},
+          month     = {October},
+          year      = {2021},
+          pages     = {2906-2915}
+      }
+    
+      @inproceedings{Cordts2016Cityscapes,
+          title={The Cityscapes Dataset for Semantic Urban Scene Understanding},
+          author={Cordts, Marius and Omran, Mohamed and Ramos, Sebastian and Rehfeld, Timo and Enzweiler, Markus and Benenson, Rodrigo and Franke, Uwe and Roth, Stefan and Schiele, Bernt},
+          booktitle={Proc. of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+          year={2016}
+      }
+
+      @inproceedings{Cordts2016Cityscapes,
+          title={The Cityscapes Dataset for Semantic Urban Scene Understanding},
+          author={Cordts, Marius and Omran, Mohamed and Ramos, Sebastian and Rehfeld, Timo and Enzweiler, Markus and Benenson, Rodrigo and Franke, Uwe and Roth, Stefan and Schiele, Bernt},
+          booktitle={Proc. of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+          year={2016}
+      }
+    </code></pre>
+
+    <p>
+      Please email <a href="mailto:jwhwang@etri.re.kr">jwhwang@etri.re.kr</a> to report any issues.
+    </p>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            @ 2025 <a href="https://etri-visualintelligence.github.io/">ETRI</a>. All rights reserved. <br>
+            Designed by <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
