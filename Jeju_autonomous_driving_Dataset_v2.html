@@ -7,7 +7,7 @@
         content="CAML Dataset | ETRI">
   <meta name="keywords" content="CAML">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>IHP Dataset</title>
+  <title>Jeju Autonomous Driving Dataset (v1)</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script> -->
@@ -118,7 +118,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">IHP Dataset</h1>
+          <h1 class="title is-1 publication-title">Jeju Autonomous Driving Dataset (v1)</h1>
           <!-- <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://keunhong.com">Keunhong Park</a><sup>1</sup>,</span>
@@ -142,21 +142,13 @@
           </div> -->
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block">ETRI</span>
+            <span class="author-block">RideFlux</span>
             <!-- <span class="author-block"><sup>2</sup>Google Research</span> -->
           </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- Dataset Link. -->
-              <span class="link-block">
-                <a href="https://github.com/kmbae/HSENet_AVSS2021"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="far fa-images"></i>
-                  </span>
-                  <span>Data</span>
-                  </a>
             </div>
 
           </div>
@@ -169,9 +161,9 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img src="./static/images/IHP_dataset_teaser.png" height="100%">
+      <img src="./static/images/rideflux.png" height="100%">
       <h2 class="subtitle has-text-centered">
-        The Irregular Human Posture (IHP) dataset is a proposed training dataset designed to recognize various human postures captured in real-world surveillance cameras.
+        A real-world dataset collected by RideFlux during autonomous vehicle pilot operations in Jeju Island.
       </h2>
     </div>
   </div>
@@ -184,11 +176,15 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Overview</h2>
         <div class="content has-text-justified">
+          <h3 class="title is-4"> Autonomous Driving Data Collection</h3>
           <p>
-            To address real-world human postures, we constructed a dataset comprising six classes: ‘Walking’, ‘Crouching’, ‘Lying’, ‘Standing’, ‘Running’, and ‘Sitting’. Additionally, the dataset is annotated with segmentation maps and keypoints to provide a more detailed understanding of human postures. 
+            <li>Collection of data from various angles, including the side-rear and side-front views of autonomous vehicles.</li>
+            <li>Collection of abnormal and adverse weather data (e.g., foggy conditions).</li>
           </p>
+          <h3 class="title is-4"> Autonomous Driving Data Object Labeling</h3>
           <p>
-            To ensure robustness across various scenarios, we also included images containing relatively small instances to account for varying object sizes.
+            <li>Bounding box annotations for the location/size and attributes (e.g., occlusion, signal status) of objects (vehicles, motorcycles, pedestrians, traffic lights, etc.)</li>
+            <li>Lane marking annotations (e.g., dashed lines, solid lines, color).</li>
           </p>
         </div>
       </div>
@@ -228,23 +224,7 @@
     <h3 class="title is-4">Key Application</h3>
     <div class="content has-text-justified">
       <p>
-        <code>Smart Surveillance System</code>
-      </p>
-    </div>
-    <!--/ Key Application. -->
-    <!-- Primary Data Type. -->
-    <h3 class="title is-4">Primary Data Type</h3>
-    <div class="content has-text-justified">
-      <p>
-        <code>Training images</code>, <code>Test images</code>, <code>Train annotations.json</code>, <code>Test annotations.json</code>
-      </p>
-    </div>
-    <!--/ Primary Data Type. -->
-    <!-- Data Function. -->
-    <h3 class="title is-4">Data Function</h3>
-    <div class="content has-text-justified">
-      <p>
-        Training, testing
+        <code>Autonomous Driving</code>, <code>Car/Vehicle Perception</code>, <code>Situation Awareness</code>, <code>Drivability Assessment</code>, <code>etc</code>
       </p>
     </div>
     <!--/ Data Function. -->
@@ -252,42 +232,80 @@
     <h3 class="title is-4">Dataset Characteristics</h3>
     <div class="content has-text-justified">
       <p>
-        <li>Total number of images: 41,904</li>
-        <li>Total number of classes: 6</li>
-        <li>Average image resolution: 720p</li>
+        <h4 class="title is-5">Volume of Datset</h4>
+        <li>Bounding Box: 54,000 images with 490,000 labeled objects.</li>
+        <li>Polyline: 38,000 images with 210,000 labeled objects.</li>
+
       </p>
     </div>
     <!--/ Dataset Characteristics. -->
     <!-- Labels. -->
     <h3 class="title is-4">Labels</h3>
     <p>
-      The annotations for training and testing are created based on COCO dataset architecture. Therefore, each json file consists of 5 keys: 
+      Data format
+      <li>Labeled positions for vehicles, pedestrians, traffic lights, and lanes (vehicles, pedestrians, traffic lights: bounding boxes; lanes: polylines).</li>
+      <li>For vehicle labels, additional attributes such as occlusion and truncation are annotated.</li>
+      <li>Vehicle Label Classes: Two-wheeled vehicles, trucks, buses, others (passenger cars), unknown (unidentifiable).</li>
+      <li>For lane markings, annotations include type (solid line, dashed line, stop line) and color (white, yellow, others).</li>
+      Each annotation records the type corresponding to a unique ID, and the annotations are stored in the annotationsData field in the form of bounding boxes or polygons based on this ID.
     </p>
     <pre><code>
-      { 
-        'info': {description: 'IHP dataset', ...}, 
-        'licenses': [{'id': 1, ...}], 
-        'categories': [{'id': 1, 'name': 'Walking', ...}], 
-        'images': [{'id': 58023, 'dataset_id': 25, 'category_ids': [4], ...}], 
-        'annotations': [{'id': 4072, 'image_id': 58023, 'category_id': 4, 'dataset_id': 25, 'segmentation': [[165.5, 2.9, ...]], ...}] 
-      }
+        "annotations": {
+          "image": [
+            {
+                "id": "omyGbBJSi4jJvSsMKulgq",
+                "tool": "bounding_box",
+                "isLocked": false,
+                "isVisible": true,
+                "classification": {
+                    "type": "Etc.",
+                    "class": "car",
+                    "Cutoff": "",
+                    "Blocked": "Blocked"
+                }
+            },
+            ]},
+	      "annotationsData": {
+          "image": [
+            {
+                "id": "omyGbBJSi4jJvSsMKulgq",
+                "tool": "bounding_box",
+                "coordinate": {
+                    "x": 833,
+                    "y": 91,
+                    "width": 42,
+                    "height": 35
+                }
+            },
+            ...
+          ]
+        }
     </code></pre>
     <!--/ Labels. -->
     <!-- Directory Structure. -->
     <h3 class="title is-4">Directory Structure</h3>
+    Each folder contains metadata indicating the image capture date and the specific camera on the autonomous vehicle that recorded the footage. Within each folder, there are img and json subfolders, where the json files share the same names as the corresponding images. These JSON files store information essential for autonomous driving, such as data on people, pedestrians, traffic lights, and lane markings.
     <pre><code>
-      . 
-      ├── train 
-      │   ├── PRO_LRV-PRO_LRV_20201110_190156_11_001-190156-SHOT-0007-THUMB.jpg 
-      │   ├── ... 
-      │   └── mphb26675.jpg 
-      ├── test 
-      │   ├── PRO_LRV-PRO_LRV_20201110_190156_11_001-190156-SHOT-0004-THUMB.jpg 
-      │   ├── ... 
-      │   └── mphb26661.jpg 
-      └── annotations 
-          ├── instances_mphbE_train2020.json 
-          └── instances_mphbE_test2020.json 
+      .
+      ├── [Image_09-06]_[v5_4]_[Camera2]
+      │   ├── img
+      │   |   ├── 2023-09-06-10-37-25_solati_v5_4_camera_2_0_NumOfObjectsChanges.jpg
+      │   |   ├── 2023-09-06-10-37-25_solati_v5_4_camera_2_1_ManyCars.jpg
+      |   |   ...
+      │   ├── json
+      │   |   ├── 2023-09-06-10-37-25_solati_v5_4_camera_2_0_NumOfObjectsChanges.json
+      │   |   ├── 2023-09-06-10-37-25_solati_v5_4_camera_2_1_ManyCars.json
+      |   |   ...
+      ├── [Image_09-06]_[v5_4]_[Camera3]
+      │   ├── img
+      │   |   ├── 2023-09-06-10-37-25_solati_v5_4_camera_3_0_ManyCars.jpg
+      │   |   ├── 2023-09-06-10-37-25_solati_v5_4_camera_3_3_ManyCars.jpg
+      |   |   ...
+      │   ├── json
+      │   |   ├── 2023-09-06-10-37-25_solati_v5_4_camera_3_0_ManyCars.json
+      │   |   ├── 2023-09-06-10-37-25_solati_v5_4_camera_3_3_ManyCars.json
+      |   |   ...
+      ├── ...
     </code></pre>
       <!--/ Directory Structure. -->
     <!--/ Dataset Information. -->
@@ -298,22 +316,8 @@
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
-    <h2 class="title">Citing Datasets</h2>
     <p>
-      If you use this datasets in your research, please use the following BibTeX entry.
-    </p>
-    <pre><code>
-      @INPROCEEDINGS{9663782,
-        author={Bae, Kangmin and Yun, Kimin and Cho, Jungchan and Bae, Yuseok},
-        booktitle={Advanced Video and Signal Based Surveillance (AVSS)}, 
-        title={The Dataset and Baseline Models to Detect Human Postural States Robustly against Irregular Postures}, 
-        year={2021},
-        doi={10.1109/AVSS52988.2021.9663782}
-      }
-    </code></pre>
-
-    <p>
-      Please email <a href="mailto:kmbae@etri.re.kr">kmbae@etri.re.kr</a> to report any issues.
+      Please email <a href="mailto:kimin.yun@etri.re.kr">kimin.yun@etri.re.kr</a> to report any issues.
     </p>
   </div>
 </section>
