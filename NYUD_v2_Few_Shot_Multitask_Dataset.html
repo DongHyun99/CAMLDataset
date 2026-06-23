@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="NYUD-v2 Few-Shot Multi-Task Dataset | CAML Dataset">
+  <meta name="keywords" content="CAML, NYUD-v2, few-shot, multi-task learning">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NYUD-v2 Few-Shot Multi-Task Dataset</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://camldataset.netlify.app/"><span class="icon"><i class="fas fa-home"></i></span></a>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">More Dataset</a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://camldataset.netlify.app/ihp_dataset">IHP Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/foggy_kitti_dataset">Foggy KITTI Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/fewshot_object_detection_benchmark">Fewshot Object Detection Benchmark</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/large_vision_models_competency_benchmark">Large Vision Models Competency Benchmark</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/jeju_autonomous_driving_dataset_v1">Jeju Autonomous Driving Dataset (v1)</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/jeju_autonomous_driving_dataset_v2">Jeju Autonomous Driving Dataset (v2)</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/common-sense_sentence_dataset">Common-sense Sentence Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/gym-dmc-cdil_dataset">GYM/DMC-CDIL Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/robot_navigation_dataset">Robot Navigation Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/beaf_dataset">BEAF Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/multitalk_dataset">MultiTalk Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/vs_tdx_benchmark">VS-TDX Benchmark</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/avhbench_dataset">AVHBench Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/personadrive_dataset">PersonaDrive Dataset</a>
+            <a class="navbar-item" href="https://camldataset.netlify.app/nyud_v2_few_shot_multitask_dataset">
+              NYUD-v2 Few-Shot Multi-Task Dataset
+            </a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/asri_lobby_dataset">ASRI Lobby Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/ciplab_deepfake_detection_dataset">CIPLAB Deepfake Detection Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/meta_validation_dataset">Meta Validation Dataset</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">NYUD-v2 Few-Shot Multi-Task Dataset</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Kyung Hee University</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="./static/images/NYUD_v2_Few_Shot_Multitask_teaser.png" height="100%">
+      <h2 class="subtitle has-text-centered">
+        A compact NYUD-v2 few-shot multi-task dataset with task-aware sample selection for semantic segmentation, depth estimation, surface normal estimation, and object boundary detection.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            This dataset selects 40 samples, approximately 5% of the original 795 NYUD-v2 training samples, and uses them as a compact training set with 654 evaluation samples.
+          </p>
+          <p>
+            Instead of using a single random subset for every task, the dataset applies task-specific sampling criteria so that each few-shot training split reflects the characteristics required by the corresponding task.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3">Dataset Information</h2>
+
+    <h3 class="title is-4">Key Application</h3>
+    <p>
+      <code>few-shot multi-task learning</code>, <code>semantic segmentation</code>, <code>depth estimation</code>, <code>surface normal estimation</code>, <code>object boundary detection</code>, <code>indoor scene understanding</code>
+    </p>
+
+    <h3 class="title is-4">Primary Data Type</h3>
+    <p>
+      <code>RGB images</code>, <code>semantic labels</code>, <code>depth maps</code>, <code>surface normals</code>, <code>object boundaries</code>
+    </p>
+
+    <h3 class="title is-4">Data Function</h3>
+    <div class="content has-text-justified">
+      <p>Few-shot training and evaluation for NYUD-v2 based multi-task learning.</p>
+    </div>
+
+    <h3 class="title is-4">Dataset Characteristics</h3>
+    <div class="content has-text-justified">
+      <ul>
+        <li>40 training samples selected from 795 original NYUD-v2 training samples.</li>
+        <li>654 samples are used for evaluation.</li>
+        <li>The training subset corresponds to approximately 5% of the original NYUD-v2 training split.</li>
+        <li>Each task uses a sampling criterion aligned with the task characteristics.</li>
+      </ul>
+    </div>
+
+    <h3 class="title is-4">Task-Specific Sampling</h3>
+    <div class="content has-text-justified">
+      <ul>
+        <li><strong>Semantic Segmentation:</strong> 40 samples are selected so that every class appears at least once and all classes are used during training.</li>
+        <li><strong>Depth Estimation:</strong> The training samples are divided into 40 bins according to maximum depth, and one sample is randomly selected from each bin to cover diverse distance ranges.</li>
+        <li><strong>Surface Normal Estimation:</strong> 40 samples are randomly selected from the full training dataset because diverse geometric orientations naturally appear across indoor scenes.</li>
+        <li><strong>Object Boundary Detection:</strong> 40 samples are randomly selected from the full dataset because object boundaries are generally distributed across most samples, reducing selection bias.</li>
+      </ul>
+    </div>
+
+    <h3 class="title is-4">Directory Structure</h3>
+    <pre><code>.
+|-- train
+|   |-- semantic_segmentation
+|   |-- depth_estimation
+|   |-- surface_normal_estimation
+|   `-- object_boundary_detection
+`-- eval
+    |-- images
+    `-- annotations</code></pre>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Citing Datasets</h2>
+    <p>If you use this dataset in your research, please cite the original NYUD-v2 dataset and this dataset page.</p>
+    <pre><code>@inproceedings{silberman2012indoor,
+  title={Indoor Segmentation and Support Inference from RGBD Images},
+  author={Silberman, Nathan and Hoiem, Derek and Kohli, Pushmeet and Fergus, Rob},
+  booktitle={European Conference on Computer Vision},
+  year={2012}
+}</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>@ 2025 <a href="https://etri-visualintelligence.github.io/">ETRI</a>. All rights reserved. <br>
+          Designed by <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

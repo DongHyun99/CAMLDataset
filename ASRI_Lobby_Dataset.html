@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="ASRI Lobby Dataset | CAML Dataset">
+  <meta name="keywords" content="CAML, ASRI, pedestrian trajectory">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ASRI Lobby Dataset</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://camldataset.netlify.app/"><span class="icon"><i class="fas fa-home"></i></span></a>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">More Dataset</a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://camldataset.netlify.app/ihp_dataset">IHP Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/foggy_kitti_dataset">Foggy KITTI Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/fewshot_object_detection_benchmark">Fewshot Object Detection Benchmark</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/large_vision_models_competency_benchmark">Large Vision Models Competency Benchmark</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/jeju_autonomous_driving_dataset_v1">Jeju Autonomous Driving Dataset (v1)</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/jeju_autonomous_driving_dataset_v2">Jeju Autonomous Driving Dataset (v2)</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/common-sense_sentence_dataset">Common-sense Sentence Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/gym-dmc-cdil_dataset">GYM/DMC-CDIL Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/robot_navigation_dataset">Robot Navigation Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/beaf_dataset">BEAF Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/multitalk_dataset">MultiTalk Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/vs_tdx_benchmark">VS-TDX Benchmark</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/avhbench_dataset">AVHBench Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/personadrive_dataset">PersonaDrive Dataset</a>
+            <a class="navbar-item" href="https://camldataset.netlify.app/nyud_v2_few_shot_multitask_dataset">
+              NYUD-v2 Few-Shot Multi-Task Dataset
+            </a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/asri_lobby_dataset">ASRI Lobby Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/ciplab_deepfake_detection_dataset">CIPLAB Deepfake Detection Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/meta_validation_dataset">Meta Validation Dataset</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">ASRI Lobby Dataset</h1>
+          <div class="is-size-5 publication-authors"><span class="author-block">Seoul National University</span></div>
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://drive.google.com/file/d/1kaFhJ4DPkuDrDtiOj8x3kQoYFkAhjVzQ/view" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="far fa-images"></i></span>
+                  <span>Data</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="./static/images/ASRI_Lobby_teaser.png" height="100%">
+      <h2 class="subtitle has-text-centered">
+        ASRI Lobby Dataset contains real-world pedestrian trajectory data collected with three LiDAR sensors in the Seoul National University ASRI building lobby.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            The dataset records moving obstacles in the ASRI lobby using three strategically placed LiDAR sensors. The setup reduces blind spots and supports pedestrian trajectory prediction and safety-related controller testing.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3">Dataset Information</h2>
+    <h3 class="title is-4">Key Application</h3>
+    <p><code>pedestrian trajectory prediction</code>, <code>situation awareness</code>, <code>drivability assessment</code>, <code>safety related controller test</code></p>
+
+    <h3 class="title is-4">Primary Data Type</h3>
+    <p><code>CSV trajectory data</code>, <code>Frame IDs</code>, <code>Agent IDs</code>, <code>X/Y coordinates</code></p>
+
+    <h3 class="title is-4">Labels</h3>
+    <p>Each CSV row contains <code>Frame</code>, <code>Agent_ID</code>, <code>X</code>, and <code>Y</code>.</p>
+    <pre><code>Frame,Agent_ID,X,Y
+1,1,2.0540540540540526,-2.6799999999999997
+1,2,7.513513513513516,-1.213333333333333
+2,1,2.0540540540540526,-2.6533333333333333
+2,2,7.54054054054054,-1.1866666666666674</code></pre>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Citing Datasets</h2>
+    <p>If you use this dataset in your research, please use the following BibTeX entry.</p>
+    <pre><code>@misc{joonhohan2025robot,
+  author = {Joonho Han},
+  title = {SNU-ASRI dataset},
+  howpublished = {\url{https://github.com/CORE-SNU/Pedestrian-Trajectory-Dataset}},
+  year = {2025}
+}</code></pre>
+    <p>Please email <a href="mailto:snowhan1021@snu.ac.kr">snowhan1021@snu.ac.kr</a> to report any issues.</p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>@ 2025 <a href="https://etri-visualintelligence.github.io/">ETRI</a>. All rights reserved. <br>
+          Designed by <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

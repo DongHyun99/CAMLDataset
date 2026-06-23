@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="AVHBench Dataset | CAML Dataset">
+  <meta name="keywords" content="CAML, AVHBench, audio-visual, hallucination">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AVHBench Dataset</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://camldataset.netlify.app/"><span class="icon"><i class="fas fa-home"></i></span></a>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">More Dataset</a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://camldataset.netlify.app/ihp_dataset">IHP Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/foggy_kitti_dataset">Foggy KITTI Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/fewshot_object_detection_benchmark">Fewshot Object Detection Benchmark</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/large_vision_models_competency_benchmark">Large Vision Models Competency Benchmark</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/jeju_autonomous_driving_dataset_v1">Jeju Autonomous Driving Dataset (v1)</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/jeju_autonomous_driving_dataset_v2">Jeju Autonomous Driving Dataset (v2)</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/common-sense_sentence_dataset">Common-sense Sentence Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/gym-dmc-cdil_dataset">GYM/DMC-CDIL Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/robot_navigation_dataset">Robot Navigation Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/beaf_dataset">BEAF Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/multitalk_dataset">MultiTalk Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/vs_tdx_benchmark">VS-TDX Benchmark</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/avhbench_dataset">AVHBench Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/personadrive_dataset">PersonaDrive Dataset</a>
+            <a class="navbar-item" href="https://camldataset.netlify.app/nyud_v2_few_shot_multitask_dataset">
+              NYUD-v2 Few-Shot Multi-Task Dataset
+            </a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/asri_lobby_dataset">ASRI Lobby Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/ciplab_deepfake_detection_dataset">CIPLAB Deepfake Detection Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/meta_validation_dataset">Meta Validation Dataset</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">AVHBench Dataset</h1>
+          <div class="is-size-5 publication-authors"><span class="author-block">KAIST</span></div>
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2410.18325" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="ai ai-arxiv"></i></span>
+                  <span>Paper</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="./static/images/AVHBench_teaser.png" height="100%">
+      <h2 class="subtitle has-text-centered">
+        AVHBench evaluates audio-visual hallucinations and cross-modal reasoning in audio-visual large language models.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            AVHBench measures how AV-LLMs hallucinate when jointly reasoning over audio and video. It covers audio-driven and video-driven hallucinations, cross-modal matching, and faithful audio-visual captioning.
+          </p>
+          <p>
+            The benchmark uses video clips spanning human behavior, animals, and mechanical processes, with yes/no judgment tasks and open-ended captioning tasks.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3">Dataset Information</h2>
+    <h3 class="title is-4">Key Application</h3>
+    <p><code>audio-visual LLM evaluation</code>, <code>hallucination analysis</code>, <code>cross-modal reasoning</code>, <code>audio-visual matching</code>, <code>multimodal captioning</code></p>
+
+    <h3 class="title is-4">Primary Data Type</h3>
+    <p><code>Video clips</code>, <code>Audio</code>, <code>Question-answer annotations</code>, <code>Captions</code></p>
+
+    <h3 class="title is-4">Dataset Characteristics</h3>
+    <ul>
+      <li>2,136 audio-visual video clips sourced from VALOR and AudioCaps test splits</li>
+      <li>5,302 judgment QnA pairs with balanced labels: 2,651 Yes and 2,651 No</li>
+      <li>1,106 audio-visual captions</li>
+      <li>Tasks include A-to-V hallucination, V-to-A hallucination, AV matching, and AV captioning</li>
+    </ul>
+
+    <h3 class="title is-4">Labels</h3>
+    <p>Each sample uses the schema <code>video_id</code>, <code>task</code>, <code>text</code>, and <code>label</code>.</p>
+    <pre><code>[
+  {
+    "video_id": "00191",
+    "task": "Video-driven Audio Hallucination",
+    "text": "Is the sleeping man making sound in the audio?",
+    "label": "Yes"
+  },
+  {
+    "video_id": "00191",
+    "task": "AV Captioning",
+    "text": "Describe what you see and hear in a single sentence.",
+    "label": "A young man with no shirt on is laying in bed..."
+  }
+]</code></pre>
+
+    <h3 class="title is-4">Directory Structure</h3>
+    <pre><code>.
+├── videos
+│   ├── 00001.mp4
+│   ├── 00002.mp4
+│   └── ...
+└── qa
+    ├── 00001.json
+    ├── 00002.json
+    └── ...</code></pre>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Citing Datasets</h2>
+    <p>If you use this dataset in your research, please use the following BibTeX entry.</p>
+    <pre><code>@article{sung2024avhbench,
+  title={AVHBench: A Cross-Modal Hallucination Benchmark for Audio-Visual Large Language Models},
+  author={Sung-Bin, Kim and Hyun-Bin, Oh and Lee, JungMok and Senocak, Arda and Chung, Joon Son and Oh, Tae-Hyun},
+  journal={arXiv preprint arXiv:2410.18325},
+  year={2024}
+}</code></pre>
+    <p>Please email <a href="mailto:sungbin@postech.ac.kr">sungbin@postech.ac.kr</a> to report any issues.</p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>@ 2025 <a href="https://etri-visualintelligence.github.io/">ETRI</a>. All rights reserved. <br>
+          Designed by <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

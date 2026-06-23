@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="PersonaDrive Dataset | CAML Dataset">
+  <meta name="keywords" content="CAML, PersonaDrive, autonomous driving, trajectory prediction">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PersonaDrive Dataset</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://camldataset.netlify.app/"><span class="icon"><i class="fas fa-home"></i></span></a>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">More Dataset</a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://camldataset.netlify.app/ihp_dataset">IHP Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/foggy_kitti_dataset">Foggy KITTI Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/fewshot_object_detection_benchmark">Fewshot Object Detection Benchmark</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/large_vision_models_competency_benchmark">Large Vision Models Competency Benchmark</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/jeju_autonomous_driving_dataset_v1">Jeju Autonomous Driving Dataset (v1)</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/jeju_autonomous_driving_dataset_v2">Jeju Autonomous Driving Dataset (v2)</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/common-sense_sentence_dataset">Common-sense Sentence Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/gym-dmc-cdil_dataset">GYM/DMC-CDIL Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/robot_navigation_dataset">Robot Navigation Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/beaf_dataset">BEAF Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/multitalk_dataset">MultiTalk Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/vs_tdx_benchmark">VS-TDX Benchmark</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/avhbench_dataset">AVHBench Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/personadrive_dataset">PersonaDrive Dataset</a>
+            <a class="navbar-item" href="https://camldataset.netlify.app/nyud_v2_few_shot_multitask_dataset">
+              NYUD-v2 Few-Shot Multi-Task Dataset
+            </a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/asri_lobby_dataset">ASRI Lobby Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/ciplab_deepfake_detection_dataset">CIPLAB Deepfake Detection Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/meta_validation_dataset">Meta Validation Dataset</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">PersonaDrive Dataset</h1>
+          <div class="is-size-5 publication-authors"><span class="author-block">Kyung Hee University</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="./static/images/PersonaDrive_teaser.png" height="100%">
+      <h2 class="subtitle has-text-centered">
+        PersonaDrive pairs real-world NavSim/OpenScene driving scenes with natural-language passenger intents and persona-specific ego trajectories.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            PersonaDrive is a large-scale persona-conditioned driving dataset for controllable and instruction-following trajectory planning research. Each scene is annotated for nine driver personas spanning urgency and comfort preferences.
+          </p>
+          <p>
+            Every persona trajectory is paired with a natural-language passenger utterance that expresses the desired driving style.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3">Dataset Information</h2>
+    <h3 class="title is-4">Key Application</h3>
+    <p><code>instruction-following planning</code>, <code>controllable trajectory generation</code>, <code>driver/passenger preference modeling</code>, <code>language-conditioned autonomous driving</code></p>
+
+    <h3 class="title is-4">Primary Data Type</h3>
+    <p><code>Scene JSON</code>, <code>Trajectories</code>, <code>Natural-language intents</code>, <code>Persona labels</code></p>
+
+    <h3 class="title is-4">Dataset Characteristics</h3>
+    <ul>
+      <li>115,434 scene files, one JSON per NavSim/OpenScene scene token</li>
+      <li>Approximately 1,038,906 labeled trajectories across nine personas</li>
+      <li>Approximately 1,038,906 natural-language passenger utterances</li>
+      <li>Raw size is approximately 1.4 GB as uncompressed JSON</li>
+    </ul>
+
+    <h3 class="title is-4">Labels</h3>
+    <p>
+      The nine persona categories are <code>UH_CL</code>, <code>UH_CM</code>, <code>UH_CH</code>, <code>UM_CL</code>, <code>UM_CM</code>, <code>UM_CH</code>, <code>UL_CL</code>, <code>UL_CM</code>, and <code>UL_CH</code>.
+    </p>
+    <pre><code>{
+  "UH_CL": {
+    "trajectory": [[0.0, 0.0, 0.2343], [2.3599, 0.5632, 0.2205]],
+    "params": {
+      "maneuver": "shift_left",
+      "speed_factor": 1.95,
+      "lane_offset": 1.1
+    },
+    "user_intent": "Hey, can we go faster? ..."
+  },
+  "_selection": {
+    "n_candidates": 5,
+    "selected_index": 0,
+    "confidence": "high"
+  }
+}</code></pre>
+
+    <h3 class="title is-4">Directory Structure</h3>
+    <pre><code>.
+├── per_scene
+│   ├── 0000548db87959c2.json
+│   ├── 0000be0b1dc65be3.json
+│   ├── 00016f8b45c25a1d.json
+│   └── ...
+└── PersonaDrive_Dataset_metadata.md</code></pre>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Citing Datasets</h2>
+    <p>If you use this dataset in your research, please use the following BibTeX entry.</p>
+    <pre><code>@misc{personadrive2026dataset,
+  author = {ChanLee, Kimin Yun, Yuseok Bae, Seong Tae Kim, Jung Uk Kim},
+  title = {PersonaDrive: Controllable Trajectory Prediction with Multi-Dimensional Driving Personas},
+  howpublished = {\url{https://github.com/}},
+  year = {2026}
+}</code></pre>
+    <p>Please email <a href="mailto:cksdlakstp12@khu.ac.kr">cksdlakstp12@khu.ac.kr</a> to report any issues.</p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>@ 2025 <a href="https://etri-visualintelligence.github.io/">ETRI</a>. All rights reserved. <br>
+          Designed by <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="CIPLAB Deepfake Detection Dataset | CAML Dataset">
+  <meta name="keywords" content="CAML, deepfake detection, DFDC, FaceForensics++">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CIPLAB Deepfake Detection Dataset</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://camldataset.netlify.app/"><span class="icon"><i class="fas fa-home"></i></span></a>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">More Dataset</a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://camldataset.netlify.app/ihp_dataset">IHP Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/foggy_kitti_dataset">Foggy KITTI Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/fewshot_object_detection_benchmark">Fewshot Object Detection Benchmark</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/large_vision_models_competency_benchmark">Large Vision Models Competency Benchmark</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/jeju_autonomous_driving_dataset_v1">Jeju Autonomous Driving Dataset (v1)</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/jeju_autonomous_driving_dataset_v2">Jeju Autonomous Driving Dataset (v2)</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/common-sense_sentence_dataset">Common-sense Sentence Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/gym-dmc-cdil_dataset">GYM/DMC-CDIL Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/robot_navigation_dataset">Robot Navigation Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/beaf_dataset">BEAF Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/multitalk_dataset">MultiTalk Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/vs_tdx_benchmark">VS-TDX Benchmark</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/avhbench_dataset">AVHBench Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/personadrive_dataset">PersonaDrive Dataset</a>
+            <a class="navbar-item" href="https://camldataset.netlify.app/nyud_v2_few_shot_multitask_dataset">
+              NYUD-v2 Few-Shot Multi-Task Dataset
+            </a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/asri_lobby_dataset">ASRI Lobby Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/ciplab_deepfake_detection_dataset">CIPLAB Deepfake Detection Dataset</a>
+          <a class="navbar-item" href="https://camldataset.netlify.app/meta_validation_dataset">Meta Validation Dataset</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">CIPLAB Deepfake Detection Dataset</h1>
+          <div class="is-size-5 publication-authors"><span class="author-block">Yonsei University</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="./static/images/CIPLAB_Deepfake_teaser.JPG" height="100%">
+      <h2 class="subtitle has-text-centered">
+        CIPLAB Deepfake Detection Dataset combines FF++-derived fake data and DFDC cropped-face benchmarks for robust deepfake detection and capability analysis.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            This dataset collection supports deepfake training, evaluation, and analysis. It includes self-blending pseudo-fakes from FF++ real videos, high-quality SimSwap fake samples, cropped DFDC face frames, and video-level analytics from a Gated Swin-DINO model.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3">Dataset Information</h2>
+    <h3 class="title is-4">Key Application</h3>
+    <p><code>deepfake detection</code>, <code>robustness evaluation</code>, <code>capability analysis</code>, <code>uncertainty analysis</code></p>
+
+    <h3 class="title is-4">Primary Data Type</h3>
+    <p><code>Images</code>, <code>Face-cropped frames</code>, <code>Video labels</code>, <code>Analytics metadata</code>, <code>Landmarks</code></p>
+
+    <h3 class="title is-4">Dataset Characteristics</h3>
+    <ul>
+      <li>FF++ Self-Blending Pseudo-Fake: 21,817 images</li>
+      <li>FF++ SimSwap High-Quality Fake: 21,817 images</li>
+      <li>DFDC Cropped-Face Benchmark: 178,370 images</li>
+      <li>DFDC Capability-Metrics Analytics: 5,000 videos</li>
+    </ul>
+
+    <h3 class="title is-4">Labels</h3>
+    <p>DFDC video labels use <code>0</code> for real and <code>1</code> for fake. Analytics metadata includes prediction probability, entropy, gate weights, and frequency summary statistics.</p>
+    <pre><code>filename,label,pred,entropy_mean,gate_swin,gate_dino,fft_low_mean,fft_mid_mean,fft_high_mean,fft_ring_mean
+data/DFDC/videos/aalscayrfi.mp4,0,0.5337,0.6565,0.3363,0.6637,0.9952,0.0043,0.0005,[0.0027;0.0003]</code></pre>
+
+    <h3 class="title is-4">Directory Structure</h3>
+    <pre><code>.
+└── data
+    ├── DFDC
+    │   ├── labels.csv
+    │   ├── analytics_gated_swin_dino.txt
+    │   └── frames_test
+    ├── FF_train
+    │   ├── original_sequences
+    │   └── manipulated_sequences
+    └── FF_test</code></pre>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Citing Datasets</h2>
+    <p>If you use this dataset in your research, please use the following BibTeX entry.</p>
+    <pre><code>@inproceedings{chen2020simswap,
+  title={Simswap: An efficient framework for high fidelity face swapping},
+  author={Chen, Renwang and Chen, Xuanhong and Ni, Bingbing and Ge, Yanhao},
+  booktitle={Proceedings of the 28th ACM international conference on multimedia},
+  pages={2003--2011},
+  year={2020}
+}</code></pre>
+    <p>Please email <a href="mailto:jjh3587@gmail.com">jjh3587@gmail.com</a> to report any issues.</p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>@ 2025 <a href="https://etri-visualintelligence.github.io/">ETRI</a>. All rights reserved. <br>
+          Designed by <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
